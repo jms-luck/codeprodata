@@ -1,0 +1,3232 @@
+[{
+  "_id": {
+    "$oid": "69821e1911b3d194fe175be4"
+  },
+  "userId": "69821cfbb83d3d5269ed202d",
+  "problemId": "69821cfbb83d3d5269ed202f",
+  "problemTitle": "Two Sum",
+  "language": "python",
+  "code": "drthbtrh",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-03T16:11:05.052Z"
+  },
+  "submissionId": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982b6540eaa0a8dccee5a6d"
+  },
+  "userId": "6982b5c50eaa0a8dccee55ab",
+  "problemId": "698234bd2fd0434e56a60c8a",
+  "problemTitle": "Palindrome Number",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    bool isPalindrome(int x) {\n        // Negative numbers and numbers ending with 0 (except 0) are not palindromes\n        if (x < 0 || (x % 10 == 0 && x != 0))\n            return false;\n\n        int reversedHalf = 0;\n\n        // Reverse half of the number\n        while (x > reversedHalf) {\n            reversedHalf = reversedHalf * 10 + x % 10;\n            x /= 10;\n        }\n\n        // For even length: x == reversedHalf\n        // For odd length: x == reversedHalf / 10\n        return (x == reversedHalf || x == reversedHalf / 10);\n    }\n};\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T03:00:36.479Z"
+  },
+  "submissionId": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982b65b0eaa0a8dccee5a73"
+  },
+  "userId": "6982b5f70eaa0a8dccee595e",
+  "problemId": "698234bd2fd0434e56a60c8a",
+  "problemTitle": "Palindrome Number",
+  "language": "java",
+  "code": "class Solution {\n    public boolean isPalindrome(int x) {\n        \n        if (x < 0 || (x % 10 == 0 && x != 0)) {\n            return false;\n        }\n\n        int reversedHalf = 0;\n\n       \n        while (x > reversedHalf) {\n            reversedHalf = reversedHalf * 10 + x % 10;\n            x /= 10;\n        }\n\n        return x == reversedHalf || x == reversedHalf / 10;\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T03:00:43.724Z"
+  },
+  "submissionId": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982b6640eaa0a8dccee5a79"
+  },
+  "userId": "6982b5d10eaa0a8dccee56e6",
+  "problemId": "698234bd2fd0434e56a60c8a",
+  "problemTitle": "Palindrome Number",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    bool isPalindrome(int x) {\n        // Negative numbers or numbers ending with 0 (except 0) are not palindromes\n        if (x < 0 || (x % 10 == 0 && x != 0))\n            return false;\n\n        int reversedHalf = 0;\n\n        // Reverse only half of the number\n        while (x > reversedHalf) {\n            reversedHalf = reversedHalf * 10 + x % 10;\n            x /= 10;\n        }\n\n        // For even length: x == reversedHalf\n        // For odd length: x == reversedHalf / 10 (remove middle digit)\n        return (x == reversedHalf || x == reversedHalf / 10);\n    }\n};\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T03:00:52.393Z"
+  },
+  "submissionId": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982b6750eaa0a8dccee5a87"
+  },
+  "userId": "6982b57f0eaa0a8dccee546a",
+  "problemId": "698234bd2fd0434e56a60c8a",
+  "problemTitle": "Palindrome Number",
+  "language": "python",
+  "code": "def isPalindrome(x: int) -> bool:\n   \n    if x < 0 or (x % 10 == 0 and x != 0):\n        return False\n\n    reversed_half = 0\n\n    \n    while x > reversed_half:\n        reversed_half = reversed_half * 10 + x % 10\n        x //= 10\n\n   \n    return x == reversed_half or x == reversed_half // 10\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T03:01:09.328Z"
+  },
+  "submissionId": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982b68c0eaa0a8dccee5a8d"
+  },
+  "userId": "6982b5710eaa0a8dccee53f6",
+  "problemId": "698234bd2fd0434e56a60c8a",
+  "problemTitle": "Palindrome Number",
+  "language": "python",
+  "code": "def isPalindrome(x: int) -> bool:\n    # Negative numbers are not palindromes\n    if x < 0:\n        return False\n    \n    # Convert to string and check if it reads same forwards and backwards\n    s = str(x)\n    return s == s[::-1]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T03:01:32.467Z"
+  },
+  "submissionId": 6,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982b6f40eaa0a8dccee5afa"
+  },
+  "userId": "6982b56d0eaa0a8dccee53f0",
+  "problemId": "698234bd2fd0434e56a60c8a",
+  "problemTitle": "Palindrome Number",
+  "language": "python",
+  "code": "\nx = int(input().strip())\n\n\ndef is_palindrome(x: int) -> bool:\n    if x < 0:\n        return False\n    \n    original, rev = x, 0\n    while original > 0:\n        rev = rev * 10 + original % 10\n        original //= 10\n    \n    return x == rev\n\n\nprint(\"true\" if is_palindrome(x) else \"false\")\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T03:03:16.032Z"
+  },
+  "submissionId": 7,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c8591ce3d38f23ae7fef"
+  },
+  "userId": "6982c6be313f449218208457",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        nums = set(nums)\n        nums = sorted(nums)\n        if len(nums) >= 3:\n            return nums[len(nums)-3]\n        return nums[len(nums)-1]\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:17:29.322Z"
+  },
+  "submissionId": 8,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c88e1ce3d38f23ae8022"
+  },
+  "userId": "6982c744313f4492182086c3",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "one = two = 1\nfor i in range(n - 1):\n temp = one \n one = one + two \n two = temp\nprint(one)",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:18:22.728Z"
+  },
+  "submissionId": 9,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c8c6503a1536cfa61d88"
+  },
+  "userId": "6982c744313f4492182086c3",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        one = two = 1\n        for i in range(n - 1):\n            temp = one \n            one = one + two \n            two = temp\n        return one",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:19:18.181Z"
+  },
+  "submissionId": 10,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c8cd98be081303a0d3d6"
+  },
+  "userId": "6982c744313f4492182086c3",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        x = list(sorted(set(nums)))\n        return x[-3] if len(x) >= 3 else x[-1]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:19:25.705Z"
+  },
+  "submissionId": 11,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c8cf313f4492182088ae"
+  },
+  "userId": "6982c6fe98be081303a0d214",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "n = int(input())\ndef func(n):\n  if ( n == 0 || n == 1) return 1 ;\n  return func(n-1)+func(n-2)\n\nprint( func(n))",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:19:27.054Z"
+  },
+  "submissionId": 12,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c8d3a3cda63886ca116a"
+  },
+  "userId": "6982c6fe98be081303a0d214",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "n = int(input())\ndef func(n):\n  if ( n == 0 || n == 1) return 1 ;\n  return func(n-1)+func(n-2)\n\nprint( func(n))",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:19:31.005Z"
+  },
+  "submissionId": 13,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c8de2e6930829d349ccc"
+  },
+  "userId": "6982c6fe98be081303a0d214",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "n = int(input())\ndef func(n):\n  if ( n == 0 || n == 1) return 1 ;\n  return func(n-1)+func(n-2)\n\nprint( func(n))",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:19:42.768Z"
+  },
+  "submissionId": 14,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c90a2e6930829d349cd2"
+  },
+  "userId": "6982c7792e6930829d349b91",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int climbStairs(int n) {\n        if (n == 0 || n == 1) {\n            return 1;\n        }\n        int pre = 1, curr = 1;\n        for (int i = 2; i <= n; i++) {\n            int temp = curr;\n            curr = pre + curr;\n            pre = temp;\n        }\n        return curr;\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:20:26.561Z"
+  },
+  "submissionId": 15,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9451ce3d38f23ae803a"
+  },
+  "userId": "6982c6e4313f449218208572",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long maxOne = Long.MIN_VALUE;\n        long maxTwo = Long.MIN_VALUE;\n        long maxThree = Long.MIN_VALUE;\n        for (int num2:nums){\n            long num = num2;\n          if(num == maxOne || num == maxTwo || num == maxThree){\n            continue;\n          }\n            if (num>maxOne){\n                maxThree = maxTwo;\n                maxTwo = maxOne;\n                maxOne = num;\n            }\n            else if (num>maxTwo ){\n                maxThree = maxTwo;\n                maxTwo = num;\n            }\n            else  if (num>maxThree){\n                maxThree = num;\n            }\n        }\n        return (int)( (maxThree == Long.MIN_VALUE) ? maxOne:maxThree);\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:21:25.536Z"
+  },
+  "submissionId": 16,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c951a3cda63886ca117d"
+  },
+  "userId": "6982c6ff313f4492182085f9",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=2){\n            return n;\n        }\n        int a = 1,b = 2,result = 0;\n        for(int i = 3;i<=n;i++){\n            result = a+b;\n            a = b;\n            b = result;\n        }\n        return result;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:21:37.648Z"
+  },
+  "submissionId": 17,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c958030bfd98ad13e32f"
+  },
+  "userId": "6982c6c2313f449218208477",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    int a=2,b=3;\n    if (n<=3) return n;\n    n-=3;\n    while (n--){\n        int temp=b;\n        b=a+b;\n        a=temp;\n        \n    }\n    return b;\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:21:44.515Z"
+  },
+  "submissionId": 18,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c984a3cda63886ca118d"
+  },
+  "userId": "6982c743313f4492182086be",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if (n <= 3) return n;\n\n        int prev1 = 3;\n        int prev2 = 2;\n        int cur = 0;\n\n        for (int i = 3; i < n; i++) {\n            cur = prev1 + prev2;\n            prev2 = prev1;\n            prev1 = cur;\n        }\n\n        return cur;        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:22:28.364Z"
+  },
+  "submissionId": 19,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c98b2e6930829d349cf3"
+  },
+  "userId": "6982c7af503a1536cfa61ca1",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int first=0;\n        int second=1;\n        int third=2;\n        if(n==1)\n        return 1;\n        if(n==2) return 2;\n        for(int i=3;i<=n;i++){\n       int     temp=third;\n            third=second+third;\n            second=temp;\n        }\n        return third;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:22:35.176Z"
+  },
+  "submissionId": 20,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c996313f4492182088df"
+  },
+  "userId": "6982c746313f4492182086cd",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object n) {\n        \n        if(n<=3) return n;\n        int prev1=2;\n        int prev2=3;\n        for(int i=3;i<n;i++){\n            int curr=prev1+prev2;\n            prev1=prev2;\n            prev2=curr;\n        }\n        return prev2;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:22:46.049Z"
+  },
+  "submissionId": 21,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c99f68eefbb5718044d9"
+  },
+  "userId": "6982c75e313f449218208718",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=3) return n;\n\n        int prev1=3;\n        int prev2=2;\n        int cur=0;\n\n        for(int i=3;i<n;i++){\n            cur=prev1+prev2;\n            prev2=prev1;\n            prev1=cur;\n        }\n        return cur;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:22:55.433Z"
+  },
+  "submissionId": 22,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9ab1ce3d38f23ae8053"
+  },
+  "userId": "6982c76e68eefbb57180445b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if (n == 0 || n == 1) {\n            return 1;\n        }\n        int prev = 1, curr = 1;\n        for (int i = 2; i <= n; i++) {\n            int temp = curr;\n            curr = prev + curr;\n            prev = temp;\n        }\n        return curr;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:07.165Z"
+  },
+  "submissionId": 23,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9b0a3cda63886ca11a3"
+  },
+  "userId": "6982c71698be081303a0d272",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n <= 1){\n            return 1;\n        }\n        int a = 1, b = 1;\n        for(int i = 2; i <= n; i++){\n            int temp = a + b;\n            a = b;\n            b = temp;\n        }\n        return b;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:12.014Z"
+  },
+  "submissionId": 24,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9bb313f4492182088ec"
+  },
+  "userId": "6982c70e98be081303a0d244",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int a = 1, b = 1;\n        for(int i=1;i<=input;i++) {\n            int temp = a+b;\n            a = b;\n            b = temp;\n        }\n\n        return a;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:23.994Z"
+  },
+  "submissionId": 25,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9c8030bfd98ad13e349"
+  },
+  "userId": "6982c74f313f4492182086e5",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n      if(n<=3) return n;\n      \n        int prev1 = 3;\n        int prev2 = 2;\n        int cur = 0;\n\n        for (int i = 3; i < n; i++) {\n            cur = prev1 + prev2;\n            prev2 = prev1;\n            prev1 = cur;\n        }\n\n        return cur;      \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:36.673Z"
+  },
+  "submissionId": 26,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9ce98be081303a0d3fc"
+  },
+  "userId": "6982c7611ce3d38f23ae7ead",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    if (n <= 2) return n;\n    int a = 1, b = 2, c;\n    for (int i = 3; i <= n; i++) {\n        c = a + b;\n        a = b;\n        b = c;\n    }\n    return b;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:42.687Z"
+  },
+  "submissionId": 27,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9d6313f4492182088f2"
+  },
+  "userId": "6982c71c98be081303a0d287",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        HashSet<Integer> set = new HashSet<>();\n        for(int n:nums){\n            set.add(n);\n        }\n        int[] arr = new int[set.size()];\n        int count=0;\n        for(int n:set){\n            arr[count++] = n;\n        }\n        Arrays.sort(arr);\n        int len = arr.length-1;\n        if(len >= 2){\n            return arr[len-2];\n        }\n        return arr[len];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:50.473Z"
+  },
+  "submissionId": 28,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9d7313f4492182088f8"
+  },
+  "userId": "6982c746313f4492182086cd",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object n) {\n        long third=Long.MIN_VALUE,second=Long.MIN_VALUE,first=Long.MIN_VALUE;\n        for(int n:nums){\n            if(n==third || n==second || n==first){\n                continue;\n            }\n            if(n>first){\n                third=second;\n                second=first;\n                first=n;\n            }else if(n>second){\n                third=second;\n                second=n;\n            }else if( n>third){\n                third=n;\n            }\n        }\n        return third==Long.MIN_VALUE?(int)first:(int)third;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:51.132Z"
+  },
+  "submissionId": 29,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9deba4a788c6d48a926"
+  },
+  "userId": "6982c743313f4492182086be",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n       TreeSet<Integer> set=new TreeSet<>();\n       for(int num:nums)set.add(num);\n       List<Integer> list=new ArrayList<>(set);\n       if(list.size()>=3){\n        return list.get(list.size()-3);\n       }\n       else{\n        return list.get(list.size()-1);\n       }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:23:58.286Z"
+  },
+  "submissionId": 30,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982c9f4313f449218208a10"
+  },
+  "userId": "6982c6fe98be081303a0d214",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "n = int(input())\nif n <= 2 :\n       return n \nnl = [0]*(n+1)\nnl[1] = 1 \nnl[2] = 2\n\n for i in range ( 3 , n+1):\n        nl[i]  = nl[i-1] +nl[i-2]\nprint(nl[n])",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:20.776Z"
+  },
+  "submissionId": 31,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca07313f449218208ab7"
+  },
+  "userId": "6982c7af503a1536cfa61ca1",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        long first=Long.MIN_VALUE;\n        long second=Long.MIN_VALUE;\n        long third=Long.MIN_VALUE;\n        for(int i=0;i<nums.length;i++){\n            if(nums[i]>first){\n                third=second;\n                second=first;\n                first=nums[i];\n\n            }\n      else  if(nums[i]>second && nums[i]<first){\n            third=second;\n            second=nums[i];\n\n            }\n        else if(nums[i]>third && nums[i]<second)\n            third=nums[i];\n        }\n        if(third==Long.MIN_VALUE)\n        return (int)first;\n       \n\n         return (int)third;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:39.831Z"
+  },
+  "submissionId": 32,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca0a313f449218208ac3"
+  },
+  "userId": "6982c74f313f4492182086e5",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n      Arrays.sort(nums);\n        if(nums.length<3)\n        return nums[nums.length-1];\n        int a=1;\n        for(int i=nums.length-1;i>0;i--)\n        {\n            if(nums[i]-nums[i-1]!=0)a++;\n            if(a==3)return nums[i-1];\n        }\n        return nums[nums.length-1];   \n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:42.410Z"
+  },
+  "submissionId": 33,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca0d313f449218208ac9"
+  },
+  "userId": "6982c70e98be081303a0d244",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int a = 1, b = 1;\n        for(int i=1;i<=(int)input;i++) {\n            int temp = a+b;\n            a = b;\n            b = temp;\n        }\n\n        return a;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:45.398Z"
+  },
+  "submissionId": 34,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca0f313f449218208ad6"
+  },
+  "userId": "6982c70e98be081303a0d244",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int a = 1, b = 1;\n        for(int i=1;i<=(int)input;i++) {\n            int temp = a+b;\n            a = b;\n            b = temp;\n        }\n\n        return a;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:47.663Z"
+  },
+  "submissionId": 35,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca11313f449218208ae7"
+  },
+  "userId": "6982c70e98be081303a0d244",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int a = 1, b = 1;\n        for(int i=1;i<=(int)input;i++) {\n            int temp = a+b;\n            a = b;\n            b = temp;\n        }\n\n        return a;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:49.626Z"
+  },
+  "submissionId": 36,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca15313f449218208af5"
+  },
+  "userId": "6982c74298be081303a0d30f",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        \n        int dp[] = new int[n+1];\n        dp[0]=1;\n        dp[1]=1;\n        for(int i=2 ;i<=n ; i++)\n        {\n            dp[i] = dp[i-1] + dp[i-2];\n        }\n        return dp[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:53.665Z"
+  },
+  "submissionId": 37,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca1b313f449218208afe"
+  },
+  "userId": "6982c6e1313f449218208550",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        // TODO: Implement solution\n        return null;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:24:59.132Z"
+  },
+  "submissionId": 38,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca1f313f449218208b20"
+  },
+  "userId": "6982c6e1313f449218208550",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "https://leetcode.com/problems/climbing-stairs/submissions/1907465983/",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:25:03.324Z"
+  },
+  "submissionId": 39,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca24313f449218208b31"
+  },
+  "userId": "6982c71698be081303a0d272",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Arrays.sort(nums);\n        int i = 0;\n        for(int indx = nums.length-2; indx >= 0; indx--){\n            if(nums[indx] != nums[indx+1]){\n                i++;\n            }\n            if(i == 2){\n                return nums[indx];\n            }\n        }\n        return nums[nums.length-1];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:25:08.014Z"
+  },
+  "submissionId": 40,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca74313f449218208d39"
+  },
+  "userId": "6982c6ab313f449218208354",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n    long first = LONG_MIN, second = LONG_MIN, third = LONG_MIN;\n    for (int i = 0; i < numsSize; i++) {\n        long n = nums[i];\n        if (n == first || n == second || n == third)\n            continue;\n        if (n > first) {\n            third = second;\n            second = first;\n            first = n;\n        }\n        else if (n > second) {\n            third = second;\n            second = n;\n        }\n        else if (n > third) {\n            third = n;\n        }\n    }\n    return (third == LONG_MIN)?first:third;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:26:28.950Z"
+  },
+  "submissionId": 41,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca78313f449218208d3f"
+  },
+  "userId": "6982c74298be081303a0d30f",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Arrays.sort(nums);\n        int n = nums.length, cnt = 1;\n\n        for (int i = n - 1; i >= 1; i--) {\n            if (nums[i] != nums[i - 1]) \n                cnt++;\n            if (cnt == 3)\n                return nums[i - 1];\n        }\n\n        return nums[n - 1];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:26:32.298Z"
+  },
+  "submissionId": 42,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca78313f449218208d45"
+  },
+  "userId": "6982c6d4313f449218208509",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n        int a=1,b=2;\n\n        if(n<=2){\n            return n;\n        }\n        else{\n            for(int i=3;i<=n;i++){\n                int c=a+b;\n                a=b;\n                b=c;\n            }\n            return b;\n        }     \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:26:32.920Z"
+  },
+  "submissionId": 43,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ca8f313f449218208d69"
+  },
+  "userId": "6982c7792e6930829d349b91",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n    int n = nums.size();\n    long max1 = LONG_MIN, max2 = LONG_MIN, max3 = LONG_MIN;\n\n    for (int i = 0; i < n; i++) {\n        if (max1 < nums[i]) {\n            max3 = max2;\n            max2 = max1;\n            max1 = nums[i];\n        } \n        else if (max2 < nums[i] && nums[i] != max1) {\n            max3 = max2;\n            max2 = nums[i];\n        } \n        else if (max3 < nums[i] && nums[i] != max2 && nums[i] != max1) {\n                max3 = nums[i];\n        }\n    }\n\n    return max3 == LONG_MIN ? max1 : max3;\n\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:26:55.305Z"
+  },
+  "submissionId": 44,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982caa4313f449218208d99"
+  },
+  "userId": "6982c73198be081303a0d2e0",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Arrays.sort(nums);\n        if(nums.length<=2)\n        return nums[nums.length-1];\n        int distinct=1;\n        int i;\n        for(i=nums.length-2; i>=0; i--)\n        {\n            if(nums[i]!=nums[i+1])\n            distinct++;\n\n            if(distinct==3)\n            return nums[i];\n        }\n        return nums[nums.length-1];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:27:16.256Z"
+  },
+  "submissionId": 45,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cab3313f449218208dad"
+  },
+  "userId": "6982c67a313f4492182082ad",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n==1)return 1;\n        if(n==2)return 2;\n        long first = 1;\n        long next = 2;\n        long val =0;\n        for(int i=3;i<=n;i++)\n        {\n            val = first+next;\n            first = next;\n            next = val;\n        }\n        return (int)val;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:27:31.329Z"
+  },
+  "submissionId": 46,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cac4313f449218208dbf"
+  },
+  "userId": "6982c6fe98be081303a0d214",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        if n <= 2 :\n            return n \n        nl = [0]*(n+1)\n        nl[1] = 1 \n        nl[2] = 2\n\n        for i in range ( 3 , n+1):\n            nl[i]  = nl[i-1] +nl[i-2]\n        return nl[n]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:27:48.059Z"
+  },
+  "submissionId": 47,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cacb313f449218208dcb"
+  },
+  "userId": "6982c6ef313f4492182085c2",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Integer max1 = null, max2 = null, max3 = null;\n        for (int num : nums) {\n\n            if ((max1 != null && num == max1) ||\n                (max2 != null && num == max2) ||\n                (max3 != null && num == max3)) {\n                continue;\n            }\n\n            if (max1 == null || num > max1) {\n                max3 = max2;\n                max2 = max1;\n                max1 = num;\n            }\n            else if (max2 == null || num > max2) {\n                max3 = max2;\n                max2 = num;\n            }\n            else if (max3 == null || num > max3) {\n                max3 = num;\n            }\n        }\n\n        return max3 == null ? max1 : max3;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:27:55.546Z"
+  },
+  "submissionId": 48,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cad6313f449218208ddd"
+  },
+  "userId": "6982c960ba4a788c6d48a88d",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int arr[]= new int[n+1];\n        arr[0]=0;\n        arr[1]=1;\n        if(n==1)\n        {\n            return arr[1];\n        }\n        arr[2]=2;\n        for(int i=3;i<=n;i++)\n        {\n            arr[i]=arr[i-1]+arr[i-2];\n        }\n        return arr[n];\n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:28:06.989Z"
+  },
+  "submissionId": 49,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cadd929efb8951f82a2b"
+  },
+  "userId": "6982c6ea313f4492182085a0",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        long firstMax = Long.MIN_VALUE, secMax = Long.MIN_VALUE, thirdMax = Long.MIN_VALUE;\n\n        for (int num : nums) {\n            if (num == firstMax || num == secMax || num == thirdMax) continue;\n\n            if (num > firstMax) {\n                thirdMax = secMax;\n                secMax = firstMax;\n                firstMax = num;\n            }\n\n            else if (num > secMax) {\n                thirdMax = secMax;\n                secMax = num;\n            }\n\n            else if (num > thirdMax) {\n                thirdMax = num;\n            }\n        }\n\n        return (thirdMax == Long.MIN_VALUE) ? (int) firstMax : (int) thirdMax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:28:13.197Z"
+  },
+  "submissionId": 50,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cadd929efb8951f82a31"
+  },
+  "userId": "6982c989ba4a788c6d48a898",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        HashSet<Integer> set=new HashSet<>();\n        \n        for(int num:nums){\n            set.add(num);\n        }\n        int j=0;\n        int arr[]=new int[set.size()];\n        for(int i:set){\n            arr[j++]=i;\n        }\n        Arrays.sort(arr);\n        \n        if(arr.length>=3){\n            return(arr[arr.length-3]);\n        }\n        return (arr[arr.length-1]);\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:28:13.498Z"
+  },
+  "submissionId": 51,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cafd782f6706193fbfa8"
+  },
+  "userId": "6982c77c2e6930829d349b95",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        Map<Integer, Integer> memo = new HashMap<>();\n        return climbStairs(n, memo);\n    }\n    \n    private int climbStairs(int n, Map<Integer, Integer> memo) {\n        if (n == 0 || n == 1) {\n            return 1;\n        }\n        if (!memo.containsKey(n)) {\n            memo.put(n, climbStairs(n-1, memo) + climbStairs(n-2, memo));\n        }\n        return memo.get(n);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:28:45.756Z"
+  },
+  "submissionId": 52,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb01ef1668dd91ccff3d"
+  },
+  "userId": "6982c77c2e6930829d349b95",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        Map<Integer, Integer> memo = new HashMap<>();\n        return climbStairs(n, memo);\n    }\n    \n    private int climbStairs(int n, Map<Integer, Integer> memo) {\n        if (n == 0 || n == 1) {\n            return 1;\n        }\n        if (!memo.containsKey(n)) {\n            memo.put(n, climbStairs(n-1, memo) + climbStairs(n-2, memo));\n        }\n        return memo.get(n);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:28:49.056Z"
+  },
+  "submissionId": 53,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb11133c599864e8e04c"
+  },
+  "userId": "6982c6fe98be081303a0d214",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n      \n        Long first = null;   \n        Long second = null; \n        Long third = null;   \n        \n        for (int num : nums) {\n            long n = num;\n\n           \n            if ((first != null && n == first) ||\n                (second != null && n == second) ||\n                (third != null && n == third)) {\n                continue;\n            }\n\n    \n            if (first == null || n > first) {\n              \n                third = second;\n                second = first;\n                first = n;\n            } else if (second == null || n > second) {\n               \n                third = second;\n                second = n;\n            } else if (third == null || n > third) {\n                third = n;\n            }\n        }\n\n  \n        return (third == null) ? first.intValue() : third.intValue();\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:29:05.493Z"
+  },
+  "submissionId": 54,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb4d782f6706193fbfc6"
+  },
+  "userId": "6982c8ff1ce3d38f23ae8030",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n    long long max=LLONG_MIN,max2=LLONG_MIN,max3=LLONG_MIN;\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]==max||nums[i]==max2||nums[i]==max3)\n        continue;\n        if(nums[i]>max){\n            max3=max2;\n            max2=max;\n            max=nums[i];\n        }\n        else if (nums[i]>max2){\n            max3=max2;\n            max2=nums[i];\n        }\n        else if(nums[i]>max3){\n            max3=nums[i];\n        }\n    }\n    if(max3==LLONG_MIN)\n    return max;\n    \n    return max3;\n\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:30:05.952Z"
+  },
+  "submissionId": 55,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb5f01e09ebcc630ab6b"
+  },
+  "userId": "6982c77c2e6930829d349b95",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "\n\nclass Solution {\n        public int thirdMax(int[] nums) {\n        Integer m1 = null;\n        Integer m2 = null;\n        Integer m3 = null;\n        for (Integer n : nums) {\n            if (n.equals(m1) || n.equals(m2) || n.equals(m3)) continue;\n            if (m1 == null || n > m1) {\n                m3 = m2;\n                m2 = m1;\n                m1 = n;\n            } else if (m2 == null || n > m2) {\n                m3 = m2;\n                m2 = n;\n            } else if (m3 == null || n > m3) {\n                m3 = n;\n            }\n        }\n        return m3 == null ? m1 : m3;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:30:23.703Z"
+  },
+  "submissionId": 56,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb6422fa3fe4242d51b5"
+  },
+  "userId": "6982c732313f449218208696",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n        \n        sort(nums.begin(),nums.end());\n        int c=0;\n        nums.erase(unique(nums.begin(),nums.end()),nums.end());\n        if(nums.size()==1){\n            return nums[0];\n        }\n        if(nums.size()<3){\n            if(nums[0]>nums[1]){\n                return nums[0];\n            }\n            else{\n                return nums[1];\n            }\n        }\n        for(int i=0;i<nums.size();i++){\n            for(int j=0;j<nums.size();j++){\n                   if(nums[i]!=nums[j]){\n                    if(nums[i]<nums[j]){\n                        c++;\n                    }\n                   }\n            }\n              if(c==2){\n                    return nums[i];\n                   }\n                   c=0;\n        }\n        return 0;\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:30:28.815Z"
+  },
+  "submissionId": 57,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb7701e09ebcc630ab71"
+  },
+  "userId": "6982c6ea313f4492182085a0",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long firstMax = Long.MIN_VALUE, secMax = Long.MIN_VALUE, thirdMax = Long.MIN_VALUE;\n\n        for (int num : nums) {\n            if (num == firstMax || num == secMax || num == thirdMax) continue;\n\n            if (num > firstMax) {\n                thirdMax = secMax;\n                secMax = firstMax;\n                firstMax = num;\n            }\n\n            else if (num > secMax) {\n                thirdMax = secMax;\n                secMax = num;\n            }\n\n            else if (num > thirdMax) {\n                thirdMax = num;\n            }\n        }\n\n        return (thirdMax == Long.MIN_VALUE) ? (int) firstMax : (int) thirdMax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:30:47.185Z"
+  },
+  "submissionId": 58,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb7820eadd2c94870705"
+  },
+  "userId": "6982c6ea313f4492182085a0",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long firstMax = Long.MIN_VALUE, secMax = Long.MIN_VALUE, thirdMax = Long.MIN_VALUE;\n\n        for (int num : nums) {\n            if (num == firstMax || num == secMax || num == thirdMax) continue;\n\n            if (num > firstMax) {\n                thirdMax = secMax;\n                secMax = firstMax;\n                firstMax = num;\n            }\n\n            else if (num > secMax) {\n                thirdMax = secMax;\n                secMax = num;\n            }\n\n            else if (num > thirdMax) {\n                thirdMax = num;\n            }\n        }\n\n        return (thirdMax == Long.MIN_VALUE) ? (int) firstMax : (int) thirdMax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:30:48.407Z"
+  },
+  "submissionId": 59,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb79782f6706193fbfd2"
+  },
+  "userId": "6982c6ea313f4492182085a0",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long firstMax = Long.MIN_VALUE, secMax = Long.MIN_VALUE, thirdMax = Long.MIN_VALUE;\n\n        for (int num : nums) {\n            if (num == firstMax || num == secMax || num == thirdMax) continue;\n\n            if (num > firstMax) {\n                thirdMax = secMax;\n                secMax = firstMax;\n                firstMax = num;\n            }\n\n            else if (num > secMax) {\n                thirdMax = secMax;\n                secMax = num;\n            }\n\n            else if (num > thirdMax) {\n                thirdMax = num;\n            }\n        }\n\n        return (thirdMax == Long.MIN_VALUE) ? (int) firstMax : (int) thirdMax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:30:49.779Z"
+  },
+  "submissionId": 60,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb87929efb8951f82a43"
+  },
+  "userId": "6982c960ba4a788c6d48a88d",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution(object):\n    def thirdMax(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        nums=list(set(nums))\n        nums.sort()\n        if(len(nums)<3):\n            return nums[-1]\n        else:\n         return nums[-3]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:31:03.888Z"
+  },
+  "submissionId": 61,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb8d133c599864e8e05e"
+  },
+  "userId": "6982c6c2313f449218208470",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n        set<int>max;\n        for(int i:nums){\n            max.insert(i);\n        }\n        if(max.size()==1){\n            return nums[0];\n        }\n        if(max.size()==2){\n            auto t=next(max.begin(),max.size()-1);\n            if(t!=max.end()){\n                return *t;\n            }\n        }\n        auto t=next(max.begin(),max.size()-3);\n        if(t!=max.end()){\n            return *t;\n        }\n        return 0;\n    \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:31:09.922Z"
+  },
+  "submissionId": 62,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cb92d0a8139d93a45ae5"
+  },
+  "userId": "6982c6c2313f449218208470",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n        set<int>max;\n        for(int i:nums){\n            max.insert(i);\n        }\n        if(max.size()==1){\n            return nums[0];\n        }\n        if(max.size()==2){\n            auto t=next(max.begin(),max.size()-1);\n            if(t!=max.end()){\n                return *t;\n            }\n        }\n        auto t=next(max.begin(),max.size()-3);\n        if(t!=max.end()){\n            return *t;\n        }\n        return 0;\n    \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:31:14.886Z"
+  },
+  "submissionId": 63,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cbe3d0a8139d93a45aeb"
+  },
+  "userId": "6982c6b8313f449218208420",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        lst = list(set(nums))\n        lst.sort(reverse=True)\n        if(len(lst)<3):\n            return max(lst)\n        return lst[2]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:32:35.153Z"
+  },
+  "submissionId": 64,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cbf2313f449218208dfc"
+  },
+  "userId": "6982c72598be081303a0d2b4",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nvoid solution() {\n    long max1=LONG_MIN;\n    long max2=LONG_MIN;\n    long max3=LONG_MIN;\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max1){\n            max1=nums[i];\n        }\n    }\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max2 && nums[i]!=max1){\n            max2=nums[i];\n        }\n    }\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max3 && nums[i]!=max1 && nums[i]!=max2){\n            max3=nums[i];\n        }\n    }\n    if(max1==max2){\n        return max1;\n    }\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max3 && nums[i]!=max1 && nums[i]!=max2){\n            max3=nums[i];\n        }\n    }\n    if(max3==LONG_MIN){\n        return max1;\n    }\n    return max3;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:32:50.148Z"
+  },
+  "submissionId": 65,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cbf201e09ebcc630ab77"
+  },
+  "userId": "6982c6b8313f449218208420",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        lst = list(set(nums))\n        lst.sort(reverse=True)\n        if(len(lst)<3):\n            return max(lst)\n        return lst[2]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:32:50.682Z"
+  },
+  "submissionId": 66,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc05d0a8139d93a45af7"
+  },
+  "userId": "6982c6d4313f449218208509",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n        sort(nums.begin(), nums.end());\n        nums.erase(unique(nums.begin(), nums.end()), nums.end());\n\n        reverse(nums.begin(), nums.end());\n\n        if(nums.size() < 3) return nums.front();        \n\n        return nums[2];        \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:33:09.035Z"
+  },
+  "submissionId": 67,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc06ef1668dd91ccff51"
+  },
+  "userId": "6982c71d313f44921820864f",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        first = max(nums)\n        while(True):\n            if first in nums:\n                nums.remove(first)\n            else:\n                break\n\n        if(nums==[]): return first\n\n        second = max(nums)\n        while(True):\n            if second in nums:\n                nums.remove(second)\n            else:\n                break\n\n        new = 0\n        if(first > second): new = first\n        else: new = second\n\n        if(nums==[]): return new\n        third = max(nums)\n        return third\n            ",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:33:10.955Z"
+  },
+  "submissionId": 68,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc07133c599864e8e20b"
+  },
+  "userId": "6982c75e313f449218208718",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long first=Long.MIN_VALUE;\n        long second=Long.MIN_VALUE;\n        long third=Long.MIN_VALUE;\n        for(int i=0;i<nums.length;i++){\n            if(nums[i]>first){\n                third=second;\n                second=first;\n                first=nums[i];\n\n            }\n      else  if(nums[i]>second && nums[i]<first){\n            third=second;\n            second=nums[i];\n\n            }\n        else if(nums[i]>third && nums[i]<second)\n            third=nums[i];\n        }\n        if(third==Long.MIN_VALUE)\n        return (int)first;\n       \n\n         return (int)third;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:33:11.692Z"
+  },
+  "submissionId": 69,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc1243ef1e49bafdeabc"
+  },
+  "userId": "6982c75b313f449218208709",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        TreeSet<Integer> set = new TreeSet<>();\n        for(int i:nums){\n            set.add(i);\n        }\n        ArrayList<Integer> list = new ArrayList<>();\n        for(int i:set){\n            list.add(i);\n        }\n        if(list.size() == 2) return list.get(1);\n        if(list.size() == 1) return list.get(0);\n        return list.get(list.size()-3);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:33:22.639Z"
+  },
+  "submissionId": 70,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc22d0a8139d93a45b03"
+  },
+  "userId": "6982c69f313f44921820831a",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution(object):\n    def climbStairs(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"\n        prev=1\n        prev2=0\n        for i in range(1,n+1):\n            curi=prev+prev2\n            prev2=prev\n            prev=curi\n        return prev",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:33:38.969Z"
+  },
+  "submissionId": 71,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc2f313f449218208e08"
+  },
+  "userId": "6982c6e1313f44921820854c",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        TreeSet<Integer> ts = new TreeSet<>();\n        for(int x:nums)\n        {\n            ts.add(x);\n        }\n        List<Integer> lst = new ArrayList<>(ts);\n        if(lst.size() >= 3)\n        {\n            return lst.get(lst.size() - 3);\n        }\n        else\n        {\n            return lst.get(lst.size() - 1);\n        }\n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:33:51.298Z"
+  },
+  "submissionId": 72,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc36782f6706193fbfe0"
+  },
+  "userId": "6982c6b5313f449218208403",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nint thirdMax(int* nums, int numsSize) {\n    long long first=LLONG_MIN;\n    long long sec=LLONG_MIN;\n    long long third=LLONG_MIN;\n    for(int i=0;i<numsSize;i++)\n    {\n        if(nums[i]==first || nums[i]== sec || nums[i]==third) { continue; }\n        else if(nums[i]>first){\n            third=sec;\n            sec=first;\n            first=nums[i];\n        }\n        else if(nums[i]>sec)\n        {\n            third=sec;\n            sec=nums[i];\n        }\n        else if(nums[i]>third)\n        {\n            third=nums[i];\n        }\n    }\n    if(third==LLONG_MIN) { return first; }\n    else\n    return third;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:33:58.068Z"
+  },
+  "submissionId": 73,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc43313f449218208e14"
+  },
+  "userId": "6982c6ea313f4492182085a0",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if (n <= 2) return n;\n        int a = 1, b = 2;\n        for (int i = 3; i <= n; i++) {\n            int c = a + b;\n            a = b;\n            b = c;\n        }\n        return b;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:34:11.347Z"
+  },
+  "submissionId": 74,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc4a01e09ebcc630ab97"
+  },
+  "userId": "6982c67a313f4492182082ad",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        if(nums.length ==1) return nums[0];\n        if(nums.length == 2)return Math.max(nums[0],nums[1]);\n        int  fmx = Integer.MIN_VALUE;\n        int smx = Integer.MIN_VALUE;\n        int tmx = Integer.MIN_VALUE;\n        int flg = 0;\n        for(int i=0;i<nums.length;i++)\n        {\n            if(nums[i]==Integer.MIN_VALUE)flg=1;\n            if(nums[i]>fmx)\n            {\n                tmx = smx;\n                smx = fmx;\n                fmx = nums[i];\n            }\n            else if(nums[i]>smx && nums[i]!=fmx)\n            {\n                tmx = smx;\n                smx = nums[i];\n            }\n            else if(nums[i]>tmx && nums[i]!=smx && nums[i]!=fmx)\n            {\n                tmx = nums[i];\n            }\n        }\n        System.out.println(fmx+\" \"+smx+\" \"+tmx);\n        if((tmx == Integer.MIN_VALUE && smx==Integer.MIN_VALUE)||(tmx==Integer.MIN_VALUE && flg==0))return fmx;\n        return tmx;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:34:18.006Z"
+  },
+  "submissionId": 75,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc64313f449218208e89"
+  },
+  "userId": "6982c76e68eefbb57180445b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        TreeSet<Integer> tset = new TreeSet<>();\n        for(int i=0; i < nums.length; i++){\n            tset.add(nums[i]);\n        }\n        if(tset.size() == 1){\n            return tset.pollLast();\n        }\n        else if(tset.size() == 2){\n            return tset.pollLast();\n        }\n        else{\n            tset.pollLast();\n            tset.pollLast();\n            return tset.pollLast();\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:34:44.334Z"
+  },
+  "submissionId": 76,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc6d313f449218208e9c"
+  },
+  "userId": "6982c6e2313f449218208558",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    if (n==1) return 1;\n    int w1=1;  \n    int w2=2;  \n\n    for (int i=3;i<=n;i++) {\n        int w3=w1+w2;\n        w1=w2;\n        w2=w3;\n    }\n    return w2;\n}\n\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:34:53.053Z"
+  },
+  "submissionId": 77,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc7b313f449218208eb7"
+  },
+  "userId": "6982c86468eefbb5718044a2",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Integer fmax= null ,smax=null,tmax=null;\n        for(Integer num: nums){\n            if(num.equals(fmax)|| num.equals(smax)|| num.equals(tmax)) continue;\n            if(fmax == null || fmax < num){\n                tmax = smax;\n                smax = fmax;\n                fmax = num;\n            }\n            else if(smax==null || smax < num){\n                tmax = smax;\n                smax = num;\n            }\n            else if(tmax == null || tmax<num) tmax = num;\n        }\n        return tmax == null?fmax:tmax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:07.622Z"
+  },
+  "submissionId": 78,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc7e313f449218208ec5"
+  },
+  "userId": "6982c86468eefbb5718044a2",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Integer fmax= null ,smax=null,tmax=null;\n        for(Integer num: nums){\n            if(num.equals(fmax)|| num.equals(smax)|| num.equals(tmax)) continue;\n            if(fmax == null || fmax < num){\n                tmax = smax;\n                smax = fmax;\n                fmax = num;\n            }\n            else if(smax==null || smax < num){\n                tmax = smax;\n                smax = num;\n            }\n            else if(tmax == null || tmax<num) tmax = num;\n        }\n        return tmax == null?fmax:tmax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:10.148Z"
+  },
+  "submissionId": 79,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc85313f449218208ed7"
+  },
+  "userId": "6982c989ba4a788c6d48a898",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if (n<=2) return n;\n        int a=1,b=2;\n        for (int i=3;i<=n;i++) {\n            int c=a+b;\n            a=b;\n            b=c;\n        }\n        return b;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:17.731Z"
+  },
+  "submissionId": 80,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc86313f449218208ee3"
+  },
+  "userId": "6982c989ba4a788c6d48a898",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if (n<=2) return n;\n        int a=1,b=2;\n        for (int i=3;i<=n;i++) {\n            int c=a+b;\n            a=b;\n            b=c;\n        }\n        return b;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:18.625Z"
+  },
+  "submissionId": 81,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc89313f449218208ee9"
+  },
+  "userId": "6982c6e4313f449218208572",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=2) return n;\n        int a=1,b=1;\n        for(int i=1;i<n;i++){\n            int temp=a;\n            a=b;\n            b=temp+b;\n        }\n        return b;    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:21.038Z"
+  },
+  "submissionId": 82,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc8c313f449218208efb"
+  },
+  "userId": "6982c6d0313f4492182084d7",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n        sort(nums.begin(),nums.end());\n        auto dup=unique(nums.begin(),nums.end());\n        nums.erase(dup,nums.end());\n        if(nums.size()==1)\n            return nums[0];\n        else if(nums.size()==2)\n            return nums[1];\n        else\n            return nums[nums.size()-3];   \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:24.058Z"
+  },
+  "submissionId": 83,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc8c313f449218208f02"
+  },
+  "userId": "6982c701313f449218208603",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) \n    {\n       int[] dp=new int[n+1];\n       dp[0]=1;\n       dp[1]=1;\n       for(int i=2;i<=n;i++)\n       {\n          dp[i]=dp[i-1]+dp[i-2];\n       }\n       return dp[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:24.302Z"
+  },
+  "submissionId": 84,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc8d313f449218208f14"
+  },
+  "userId": "6982c71798be081303a0d276",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n==0)\n        {\n            return 0;\n        }\n        List<Integer>alist=new ArrayList<>();\n        int first=0;\n        int second=1;\n        for(int i=1;i<=n;i++)\n        {\n           int sum=first+second;\n           alist.add(sum);\n           first=second;\n           second=alist.get(alist.size()-1);\n        }\n        return alist.get(n-1);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:25.967Z"
+  },
+  "submissionId": 85,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc8f313f449218208f1a"
+  },
+  "userId": "6982c701313f449218208603",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) \n    {\n       int[] dp=new int[n+1];\n       dp[0]=1;\n       dp[1]=1;\n       for(int i=2;i<=n;i++)\n       {\n          dp[i]=dp[i-1]+dp[i-2];\n       }\n       return dp[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:27.113Z"
+  },
+  "submissionId": 86,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc90313f449218208f20"
+  },
+  "userId": "6982c701313f449218208603",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) \n    {\n       int[] dp=new int[n+1];\n       dp[0]=1;\n       dp[1]=1;\n       for(int i=2;i<=n;i++)\n       {\n          dp[i]=dp[i-1]+dp[i-2];\n       }\n       return dp[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:28.237Z"
+  },
+  "submissionId": 87,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cc97313f449218208f38"
+  },
+  "userId": "6982c701313f449218208603",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) \n    {\n       int[] dp=new int[n+1];\n       dp[0]=1;\n       dp[1]=1;\n       for(int i=2;i<=n;i++)\n       {\n          dp[i]=dp[i-1]+dp[i-2];\n       }\n       return dp[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:35.689Z"
+  },
+  "submissionId": 88,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cca1313f449218208f44"
+  },
+  "userId": "6982c6f598be081303a0d1f6",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n==0 ||n==1 || n==2){\n            return n;\n        }\n        int a=1,b=2;\n        for(int i=3;i<=n;i++){\n            int c=a+b;\n            a=b;\n            b=c;\n        }\n        return b;\n        \n    }\n    }",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:45.070Z"
+  },
+  "submissionId": 89,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cca2313f449218208f4a"
+  },
+  "userId": "6982c6ff313f4492182085f9",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Arrays.sort(nums);\n        for(int i = 0;i<nums.length/2;++i){\n            int temp = nums[i];\n            nums[i] = nums[nums.length-1-i];\n            nums[nums.length-1-i] = temp;\n        }\n        int count = 1;\n        int prev = nums[0];\n        for(int i = 1;i<nums.length;++i){\n            if(nums[i]!=prev){\n                count+=1;\n                prev = nums[i];\n            }\n            if(count==3) return nums[i];\n        }\n        return nums[0];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:35:46.031Z"
+  },
+  "submissionId": 90,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ccdf313f449218208f86"
+  },
+  "userId": "6982c6f598be081303a0d1f6",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n      int len=nums.length;\n      TreeSet<Integer> num=new TreeSet<>();\n      for(int n:nums){\n        num.add(n);\n      }\n      List<Integer> list=new ArrayList<>(num);\n      int l=list.size();\n      if(l>=3){\n        return list.get(l-3);\n      }\n      else{\n        return list.get(l-1);\n      }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:36:47.086Z"
+  },
+  "submissionId": 91,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cce3313f449218208f8c"
+  },
+  "userId": "6982c71c98be081303a0d28b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nvoid solution() {\n#include <limits.h>\n\nint thirdMax(int* nums, int numsSize) {\n    long  fmax=LONG_MIN,smax=LONG_MIN,tmax=LONG_MIN+10;\n    for(int i=0;i<numsSize;i++)\n    {\n\n        long long x=nums[i];\n        if(x==fmax || x==smax|| x==tmax)\n        {\n            continue;\n        }\n        if(x>fmax)\n        {\n            tmax=smax;\n            smax=fmax;\n            fmax=x;\n        }else if(x>smax)\n        {\n            tmax=smax;\n            smax=x;\n        }else if(x>tmax)\n        {\n            tmax=x;\n        }\n    }\n    if(tmax==LONG_MIN)\n    {\n        return fmax;\n    }\n    return tmax;\n}\n\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:36:51.975Z"
+  },
+  "submissionId": 92,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ccee313f449218208f92"
+  },
+  "userId": "6982c72798be081303a0d2bb",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        nums = sorted(set(nums))\n        if len(nums) < 3:\n            return nums[-1]\n        return nums[-3]\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:37:02.795Z"
+  },
+  "submissionId": 93,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd35313f449218208fb4"
+  },
+  "userId": "6982c71e98be081303a0d296",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public static int thirdMax(int[] nums) {\n        Arrays.sort(nums);\n\n        ArrayList<Integer> arr = new ArrayList<>();\n\n        for (int i = 0; i < nums.length; i++) {\n            if (arr.isEmpty() || arr.get(arr.size() - 1) != nums[i]) {\n                arr.add(nums[i]);\n            }\n        }\n\n        if (arr.size() < 3) {\n            return arr.get(arr.size() - 1);\n        }\n\n        return arr.get(arr.size() - 3);\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:13.188Z"
+  },
+  "submissionId": 94,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd47313f449218208fe4"
+  },
+  "userId": "6982c71198be081303a0d250",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Set<Integer> ts=new HashSet<>();\n        for(int ch:nums){\n            ts.add(ch);\n        }\n        List<Integer> al=new ArrayList<>(ts);\n        Collections.sort(al);\n        if(al.size()==2){\n            return al.get(1);\n        }\n        else if(al.size()==1){\n            return al.get(0);\n        }\n        else return al.get(al.size()-3);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:31.801Z"
+  },
+  "submissionId": 95,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd4b313f449218208ff0"
+  },
+  "userId": "6982c6b5313f449218208403",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nint climbStairs(int n) \n{\nif(n<=1) { return 1; }\nint prev=1;\nint curr=2;\nfor(int i=3;i<=n;i++)\n{ \n    int temp=curr;\n    curr=prev+curr;\n    prev=temp;\n}\nreturn curr;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:35.567Z"
+  },
+  "submissionId": 96,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd51313f449218208ff6"
+  },
+  "userId": "6982c6c8313f4492182084a7",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\n#include <stdio.h>\nint thirdMax(int* nums, int numsSize) {\n    int i,j,temp,max=0;\n    for(i=0;i<numsSize;i++)\n    {\n        for(j=i+1;j<numsSize;j++)\n        {\n            if(nums[i]>nums[j])\n            {\n                temp=nums[i];\n                nums[i]=nums[j];\n                nums[j]=temp;\n            }\n        }\n    }\n    int k=0;\n    for(i=0;i<numsSize;i++)\n    {\n        for(j=i+1;j<numsSize;j++)\n        {\n            if(nums[i]!=nums[j])\n            {\n                nums[k++]=nums[i];\n            }\n        }\n\n    }\n    if(numsSize>=3)\n    {\n        max=nums[2];\n  return max;\n    }\n    else if(numsSize==2)\n    {\n        max=nums[1];\n        return max;\n    }\n    else\n    {\n        max=nums[0];\n        return max;\n    }\n  \n    \n}\n    \n}\nint main()\n{ int nums[100];\nint numsSize;\nint i;\nscanf(\"%d\",&numsSize);\nfor(i=0;i<numsSize;i++)\n{\nscanf(\"%d\",&nums[i]);\n}\nprintf(\"%d\",thirdMax(nums,numsSize));\n}\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:41.026Z"
+  },
+  "submissionId": 97,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd56313f449218209002"
+  },
+  "userId": "6982c6b5313f449218208403",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nint climbStairs(int n) \n{\nif(n<=1) { return 1; }\nint prev=1;\nint curr=2;\nfor(int i=3;i<=n;i++)\n{ \n    int temp=curr;\n    curr=prev+curr;\n    prev=temp;\n}\nreturn curr;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:46.085Z"
+  },
+  "submissionId": 98,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd56313f449218209008"
+  },
+  "userId": "6982c713313f44921820862b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n        int max1 = nums[0];\n        int max2 = nums[0], max3 = nums[0];\n        int n = nums.size();\n\n        for (int i = 0; i < n; i++)\n        {\n            if (nums[i] > max1)\n            {    \n                max1 = nums[i];\n            }\n        }\n\n        int flag = 0;\n        for (int i = 0; i < n; i++) \n        {\n            if (nums[i] < max1) \n            {\n                max2 = nums[i];\n                flag = 1;\n                break;\n            }\n        }\n        if (flag == 0) \n        {\n            return max1;\n        }\n\n        for (int i = 0; i < n; i++)\n            if (nums[i] < max1 && nums[i] > max2)\n                max2 = nums[i];\n        \n        flag = 0;\n        for (int i = 0; i < n; i++) \n        {\n            if (nums[i] < max2) \n            {\n                max3 = nums[i];\n                flag = 1;\n                break;\n            }\n        }\n        if (flag == 0)\n        {\n            return max1;\n        }\n\n        for (int i = 0; i < n; i++)\n        {\n            if (nums[i] < max2 && nums[i] > max3)\n            {\n                max3 = nums[i];\n            }\n        }\n\n        return max3;\n    }\n};\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:46.561Z"
+  },
+  "submissionId": 99,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd62313f449218209038"
+  },
+  "userId": "6982c7991ce3d38f23ae7eb7",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Set<Integer> s = new HashSet<>();\n        for(int i : nums){\n            s.add(i);\n        }\n        List<Integer> list = new ArrayList<>(s);\n        Collections.sort(list);\n        if(list.size() == 2){\n            return list.get(1);\n        }else if(list.size() == 1){\n            return list.get(0);\n        }else{\n            return list.get(list.size() - 3);\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:58.159Z"
+  },
+  "submissionId": 100,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd62313f44921820903e"
+  },
+  "userId": "6982c6fc98be081303a0d20a",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n        int len = nums.size();\n        if(len == 1){\n            return nums[0];\n        }\n\n        unordered_set<int> uniques;\n        for(int x : nums){\n            uniques.insert(x);\n        }\n\n        vector<int> sortedUniques;\n\n        for(int x : uniques){\n            sortedUniques.push_back(x);\n        }\n\n        if(sortedUniques.size() == 1){\n            return sortedUniques[0];\n        }\n        sort(sortedUniques.begin(), sortedUniques.end());\n        if(sortedUniques.size() == 2){\n            return sortedUniques[1];\n        }\n        return sortedUniques[sortedUniques.size()-3];\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:58.287Z"
+  },
+  "submissionId": 101,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd63313f449218209044"
+  },
+  "userId": "6982c86468eefbb5718044a2",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "if(n<=3):\n            return n\n        prev1 = 3\n        prev2 = 2\n        cur = 0\n        for i in range(4,n+1):\n            cur = prev1+prev2\n            prev2 = prev1\n            prev1 = cur\n        return cur",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:38:59.500Z"
+  },
+  "submissionId": 102,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd67313f44921820904a"
+  },
+  "userId": "6982c86468eefbb5718044a2",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "if(n<=3):\n            return n\n        prev1 = 3\n        prev2 = 2\n        cur = 0\n        for i in range(4,n+1):\n            cur = prev1+prev2\n            prev2 = prev1\n            prev1 = cur\n        return cur",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:39:03.024Z"
+  },
+  "submissionId": 103,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd67313f449218209050"
+  },
+  "userId": "6982c6f3313f4492182085d1",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    int climbStairs(int n){\n        if (n<=3) \n        return n;\n        int step1=3;\n        int step2=2;\n        int ways=0;\n            for (int i=3;i<n;i++){\n            ways=step1+step2; \n            step2=step1;\n            step1=ways;\n        }\n        return ways;        \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:39:03.106Z"
+  },
+  "submissionId": 104,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd94313f4492182090b0"
+  },
+  "userId": "6982c963a3cda63886ca1181",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long first = Long.MIN_VALUE;\n        long second = Long.MIN_VALUE;\n        long third = Long.MIN_VALUE;\n\n        for (int num : nums) {\n            if (num == first || num == second || num == third)\n                continue;\n\n            if (num > first) {\n                third = second;\n                second = first;\n                first = num;\n            } else if (num > second) {\n                third = second;\n                second = num;\n            } else if (num > third) {\n                third = num;\n            }\n        }\n\n        return third == Long.MIN_VALUE ? (int) first : (int) third;\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:39:48.234Z"
+  },
+  "submissionId": 105,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd96313f4492182090bc"
+  },
+  "userId": "6982c71c98be081303a0d287",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int a =0;\n        int b=1;\n        int c=0;\n        for(int i=0;i<n;i++){\n            c = a+b;\n            a=b;\n            b=c;\n        }\n        return c;\n    }\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:39:50.644Z"
+  },
+  "submissionId": 106,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd9a313f4492182090ce"
+  },
+  "userId": "6982c71c98be081303a0d287",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int a =0;\n        int b=1;\n        int c=0;\n        for(int i=0;i<n;i++){\n            c = a+b;\n            a=b;\n            b=c;\n        }\n        return c;\n    }\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:39:54.550Z"
+  },
+  "submissionId": 107,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cd9b313f4492182090d4"
+  },
+  "userId": "6982c71c98be081303a0d287",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int a =0;\n        int b=1;\n        int c=0;\n        for(int i=0;i<n;i++){\n            c = a+b;\n            a=b;\n            b=c;\n        }\n        return c;\n    }\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:39:55.061Z"
+  },
+  "submissionId": 108,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cda2313f4492182090e6"
+  },
+  "userId": "6982c9ca1ce3d38f23ae805d",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n         int first =2 ;\n        int second = 1;\n        int i=2;\n        if(n==1 || n==2)\n        return n;\n        while(i<n){\n            int temp = first;\n            first+=second;\n            second = temp;\n            i++;\n            \n        }\nreturn first;    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:40:02.814Z"
+  },
+  "submissionId": 109,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cdaa313f44921820910a"
+  },
+  "userId": "6982c71098be081303a0d24b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long max1=Long.MIN_VALUE,max2=Long.MIN_VALUE,max3=Long.MIN_VALUE;\n        for(long i : nums){\n            if(i>max1){\n                max3=max2;\n                max2=max1;\n                max1=i;\n            }\n            else if(i>max2 && i!=max1){\n                max3=max2;\n                max2=i;\n            }\n            else if(i>max3 && i!=max2 && i!=max1){\n                max3=i;\n            }\n        }\n        return (max3==Long.MIN_VALUE)? (int)max1 : (int)max3;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:40:10.494Z"
+  },
+  "submissionId": 110,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cdcb313f449218209134"
+  },
+  "userId": "6982c6f3313f4492182085d5",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if (n == 1) return 1;\n        if (n == 2) return 2;\n        int a = 1; \n        int b = 2;\n        int c = 0;\n        for (int i = 3; i <= n; i++) {\n            c=a+b;\n            a=b;\n            b=c;\n        }\n        return c; \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:40:43.314Z"
+  },
+  "submissionId": 111,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cdd1313f44921820913a"
+  },
+  "userId": "6982c6fb98be081303a0d206",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int dp[]=new int[n+1];\n        dp[0]=1;\n        dp[1]=1;\n        for(int i=2;i<=n;i++)\n        {\n            dp[i]=dp[i-2]+dp[i-1];\n        }\n        return dp[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:40:49.510Z"
+  },
+  "submissionId": 112,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cddc313f449218209146"
+  },
+  "userId": "6982c6ef313f4492182085c2",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=2) return n;\n        int a=1,b=2;\n        for(int i=3;i<=n;i++){\n            int c=a+b;\n            a=b;\n            b=c;\n        }\n        return b;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:00.702Z"
+  },
+  "submissionId": 113,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cde6313f44921820915e"
+  },
+  "userId": "6982ca2e313f449218208b53",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=2) return n;\n        int i=1, j=2;\n        for(int a=3; a<=n; a++){\n            int k=i+j;\n            i=j;\n            j=k;\n        }\n        return j;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:10.397Z"
+  },
+  "submissionId": 114,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cde9313f44921820916a"
+  },
+  "userId": "6982c7b8ba4a788c6d48a810",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        // TODO: Implement solution\nif(n==0||n==1) return 1;\n        if(n==2) return 2;\n        int a=1,b=2;\n  \n        for(int i=3;i<=n;i++){\n                int c =a+b;\n                a=b;\n                b=c;\n            }\n        return b;\n\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:13.569Z"
+  },
+  "submissionId": 115,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cdec313f449218209170"
+  },
+  "userId": "6982c7b8ba4a788c6d48a810",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        // TODO: Implement solution\nif(n==0||n==1) return 1;\n        if(n==2) return 2;\n        int a=1,b=2;\n  \n        for(int i=3;i<=n;i++){\n                int c =a+b;\n                a=b;\n                b=c;\n            }\n        return b;\n\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:16.942Z"
+  },
+  "submissionId": 116,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cdf5313f449218209188"
+  },
+  "userId": "6982c6a6313f449218208344",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    if(n<=2){\n        return n;\n    }\n    int firststep = 1;\n    int secondstep = 2;\n    int thirdstep;\n    for(int i=3; i<=n; i++){\n        thirdstep = firststep + secondstep;\n        firststep = secondstep;\n        secondstep = thirdstep;\n        \n    }\n    return secondstep;\n\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:25.910Z"
+  },
+  "submissionId": 117,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cdf9313f44921820918e"
+  },
+  "userId": "6982c6a6313f449218208344",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    if(n<=2){\n        return n;\n    }\n    int firststep = 1;\n    int secondstep = 2;\n    int thirdstep;\n    for(int i=3; i<=n; i++){\n        thirdstep = firststep + secondstep;\n        firststep = secondstep;\n        secondstep = thirdstep;\n        \n    }\n    return secondstep;\n\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:29.702Z"
+  },
+  "submissionId": 118,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cdfa313f449218209194"
+  },
+  "userId": "6982c6a6313f449218208344",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    if(n<=2){\n        return n;\n    }\n    int firststep = 1;\n    int secondstep = 2;\n    int thirdstep;\n    for(int i=3; i<=n; i++){\n        thirdstep = firststep + secondstep;\n        firststep = secondstep;\n        secondstep = thirdstep;\n        \n    }\n    return secondstep;\n\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:30.753Z"
+  },
+  "submissionId": 119,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce07313f4492182091a8"
+  },
+  "userId": "6982c6f3313f4492182085d5",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(int n) {\n        if (n == 1) return 1;\n        if (n == 2) return 2;\n        int a = 1; \n        int b = 2;\n        int c = 0;\n        for (int i = 3; i <= n; i++) {\n            c=a+b;\n            a=b;\n            b=c;\n        }\n        return c; \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:43.130Z"
+  },
+  "submissionId": 120,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce0b313f4492182091ae"
+  },
+  "userId": "6982c963a3cda63886ca1181",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=3) return n;\n        int a=2,b=1;\n\n        for(int i=3;i<=n;i++)\n        {\n            int curr=a+b;\n            b=a;\n            a=curr;\n        }\n        return a;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:47.348Z"
+  },
+  "submissionId": 121,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce0e313f4492182091bb"
+  },
+  "userId": "6982c6ab313f449218208354",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    int steps[10000];\n    steps[1] = 1;\n    steps[2] = 2;\n    for (int i = 3; i <= n; i++){\n        steps[i] = steps[i - 1] + steps[i - 2];\n    }\n    return steps[n];\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:50.979Z"
+  },
+  "submissionId": 122,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce11313f4492182091c1"
+  },
+  "userId": "6982c6ab313f449218208354",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    int steps[10000];\n    steps[1] = 1;\n    steps[2] = 2;\n    for (int i = 3; i <= n; i++){\n        steps[i] = steps[i - 1] + steps[i - 2];\n    }\n    return steps[n];\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:53.698Z"
+  },
+  "submissionId": 123,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce15313f4492182091c7"
+  },
+  "userId": "6982c6ab313f449218208354",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    int steps[10000];\n    steps[1] = 1;\n    steps[2] = 2;\n    for (int i = 3; i <= n; i++){\n        steps[i] = steps[i - 1] + steps[i - 2];\n    }\n    return steps[n];\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:41:57.571Z"
+  },
+  "submissionId": 124,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce37313f4492182091df"
+  },
+  "userId": "6982c6be313f449218208457",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        steps = 0\n        if n == 1:\n            return 1\n        hashmap = {}\n        k = n\n        #climbing \n        def climb(k):\n            if k in hashmap:\n                return hashmap[k]\n            if k == 1:\n                return 1\n            if k == 2:\n                return 2\n            if k not in hashmap:\n                hashmap[k] = climb(k-1) + climb(k-2)\n            return climb(k-1)+climb(k-2)\n\n        steps += climb(k)\n        return steps\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:42:31.371Z"
+  },
+  "submissionId": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce3a313f4492182091e5"
+  },
+  "userId": "6982c6be313f449218208457",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        steps = 0\n        if n == 1:\n            return 1\n        hashmap = {}\n        k = n\n        #climbing \n        def climb(k):\n            if k in hashmap:\n                return hashmap[k]\n            if k == 1:\n                return 1\n            if k == 2:\n                return 2\n            if k not in hashmap:\n                hashmap[k] = climb(k-1) + climb(k-2)\n            return climb(k-1)+climb(k-2)\n\n        steps += climb(k)\n        return steps\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:42:34.042Z"
+  },
+  "submissionId": 126,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce3e313f4492182091eb"
+  },
+  "userId": "6982c6be313f449218208457",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        steps = 0\n        if n == 1:\n            return 1\n        hashmap = {}\n        k = n\n        #climbing \n        def climb(k):\n            if k in hashmap:\n                return hashmap[k]\n            if k == 1:\n                return 1\n            if k == 2:\n                return 2\n            if k not in hashmap:\n                hashmap[k] = climb(k-1) + climb(k-2)\n            return climb(k-1)+climb(k-2)\n\n        steps += climb(k)\n        return steps\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:42:38.262Z"
+  },
+  "submissionId": 127,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce3e313f4492182091f1"
+  },
+  "userId": "6982c6be313f449218208457",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        steps = 0\n        if n == 1:\n            return 1\n        hashmap = {}\n        k = n\n        #climbing \n        def climb(k):\n            if k in hashmap:\n                return hashmap[k]\n            if k == 1:\n                return 1\n            if k == 2:\n                return 2\n            if k not in hashmap:\n                hashmap[k] = climb(k-1) + climb(k-2)\n            return climb(k-1)+climb(k-2)\n\n        steps += climb(k)\n        return steps\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:42:38.820Z"
+  },
+  "submissionId": 128,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce53313f449218209209"
+  },
+  "userId": "6982c73698be081303a0d2ed",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n\n    if(n==1) \n    {\n        return 1;\n    }\n    if(n==2)\n    {\n        return 2;\n    }\n    int f=1,s=2;\n    int ans=0;\n    for(int i=3;i<=n;i++)\n    {\n        ans=f+s;\n        f=s;\n        s=ans;\n    }\n    return ans;\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:42:59.602Z"
+  },
+  "submissionId": 129,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce7a313f449218209233"
+  },
+  "userId": "6982c6be313f449218208457",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        steps = 0\n        if n == 1:\n            return 1\n        hashmap = {}\n        k = n\n        #climbing \n        def climb(k):\n            if k in hashmap:\n                return hashmap[k]\n            if k == 1:\n                return 1\n            if k == 2:\n                return 2\n            if k not in hashmap:\n                hashmap[k] = climb(k-1) + climb(k-2)\n            return climb(k-1)+climb(k-2)\n\n        steps += climb(k)\n        return steps\n\n        \n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:43:38.396Z"
+  },
+  "submissionId": 130,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce82313f449218209245"
+  },
+  "userId": "6982c69f313f44921820831a",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution(object):\n    def thirdMax(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        nums.sort()\n        num=[]\n        for i in nums:\n            if i not in num:\n                num.extend([i])\n        if len(num)<3:\n            return num[-1]\n        return num[-3]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:43:46.066Z"
+  },
+  "submissionId": 131,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ce90313f449218209251"
+  },
+  "userId": "6982c6be313f449218208457",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        nums = set(nums)\n        nums = sorted(nums)\n        if len(nums) >= 3:\n            return nums[len(nums)-3]\n        return nums[len(nums)-1]\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:44:00.025Z"
+  },
+  "submissionId": 132,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ced2313f449218209275"
+  },
+  "userId": "6982c73198be081303a0d2e0",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int a=0, b=1;\n        int c=1;\n        for(int step=1; step<=n; step++)\n        {\n            c=a+b;\n            a=b;\n            b=c;\n        }\n        return c; \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:45:06.434Z"
+  },
+  "submissionId": 133,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982ceeb313f449218209281"
+  },
+  "userId": "6982c6d7313f44921820851b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nvoid solution() {\n    int fmax=INT_MIN,smax=INT_MIN,tmax=INT_MIN;\n    int t=0;\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]==INT_MIN)\n        t=nums[i];\n\n        if(nums[i]>fmax){\n            tmax=smax;\n            smax=fmax;\n            fmax=nums[i];\n        }else if(nums[i]<fmax && nums[i]>smax){\n            tmax=smax;\n            smax=nums[i];\n        }else if(nums[i]<smax && nums[i]>tmax){\n            tmax=nums[i];\n        }\n    }\n    if(t==0 && tmax==INT_MIN){\n        return fmax;\n    }\n    else if(tmax==smax){\n        return fmax;\n    }\n    else if(t!=0){\n        return t;\n    }\n    else{\n        return tmax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:45:31.037Z"
+  },
+  "submissionId": 134,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cef0313f449218209287"
+  },
+  "userId": "6982c6d7313f44921820851b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nvoid solution() {\n    int fmax=INT_MIN,smax=INT_MIN,tmax=INT_MIN;\n    int t=0;\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]==INT_MIN)\n        t=nums[i];\n\n        if(nums[i]>fmax){\n            tmax=smax;\n            smax=fmax;\n            fmax=nums[i];\n        }else if(nums[i]<fmax && nums[i]>smax){\n            tmax=smax;\n            smax=nums[i];\n        }else if(nums[i]<smax && nums[i]>tmax){\n            tmax=nums[i];\n        }\n    }\n    if(t==0 && tmax==INT_MIN){\n        return fmax;\n    }\n    else if(tmax==smax){\n        return fmax;\n    }\n    else if(t!=0){\n        return t;\n    }\n    else{\n        return tmax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:45:36.887Z"
+  },
+  "submissionId": 135,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cf08313f4492182092ab"
+  },
+  "userId": "6982c71d313f44921820864f",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        if(n==0): return 0\n        else:\n            a,b,s = 0,1,0\n            for i in range(n):\n                s = a+b\n                a = b\n                b = s\n        return s",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:46:00.207Z"
+  },
+  "submissionId": 136,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cf28313f4492182092b7"
+  },
+  "userId": "6982c8ff1ce3d38f23ae8030",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "int climbStairs(int n) {\n    if(n<=2)\n    return n;\n    int dp[n+1];\n    dp[1]=1;\n    dp[2]=2;\n    for(int i=3;i<n+1;i++){\n        dp[i]=dp[i-1]+dp[i-2];\n    }\n    return dp[n];\n\n\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:46:32.102Z"
+  },
+  "submissionId": 137,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cf2f313f4492182092c3"
+  },
+  "userId": "6982c6bd313f449218208444",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nvoid solution() {\n    int thirdMax(int* nums, int numsSize) {\n    long f=LONG_MIN,s=LONG_MIN,t=LONG_MIN;\n    for(int i=0;i<numsSize;i++){\n        long x=nums[i];\n    \n        if(x==f || x==s || x==t){\n            continue;\n        }\n\n        if(x>f){\n            t=s;\n            s=f;\n            f=x;\n        }\n        else if(x>s){\n            t=s;\n            s=x;\n        }\n        else if(x>t){\n            t=x;\n        }\n    }\n    if(t==LONG_MIN){\n        return f;\n    }\n    return t;\n}\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:46:39.802Z"
+  },
+  "submissionId": 138,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cf39313f4492182092cf"
+  },
+  "userId": "6982c752313f4492182086f3",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "int thirdMax(int* nums, int numsSize){\n    for(int i=0;i<numsSize;i++){\n        for(int j=i+1;j<numsSize;j++){\n            if(nums[i]<nums[j]){\n                int temp=nums[i];\n                nums[i]=nums[j];\n                nums[j]=temp;\n            }\n        }\n    }\n    int c=0,d=1;\n    for(int i=0;i<numsSize-1;i++){\n        if(nums[i]!=nums[i+1]){\n            d++;\n            if(d==3){\n                return nums[i+1];\n            }\n        }\n    }\n    \n    return nums[0];\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:46:49.702Z"
+  },
+  "submissionId": 139,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cf40313f4492182092d5"
+  },
+  "userId": "6982c752313f4492182086f3",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "int thirdMax(int* nums, int numsSize){\n    for(int i=0;i<numsSize;i++){\n        for(int j=i+1;j<numsSize;j++){\n            if(nums[i]<nums[j]){\n                int temp=nums[i];\n                nums[i]=nums[j];\n                nums[j]=temp;\n            }\n        }\n    }\n    int c=0,d=1;\n    for(int i=0;i<numsSize-1;i++){\n        if(nums[i]!=nums[i+1]){\n            d++;\n            if(d==3){\n                return nums[i+1];\n            }\n        }\n    }\n    \n    return nums[0];\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:46:56.238Z"
+  },
+  "submissionId": 140,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cf60313f4492182092ea"
+  },
+  "userId": "6982c6bd313f449218208444",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\n    int climbStairs(int n) {\n    if(n==1) return 1;\n    int arr[n];\n    arr[0]=1;\n    arr[1]=2;\n    for(int i=2;i<n;i++){\n        arr[i]=arr[i-1]+arr[i-2];\n    }\n   return arr[n-1];\n}\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:47:28.086Z"
+  },
+  "submissionId": 141,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cf9a313f44921820931c"
+  },
+  "userId": "6982c72598be081303a0d2b4",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution(object):\n    def climbStairs(self, n):\n        a,b=0,1\n        for i in range(2,n+2):\n            a,b=b,a+b\n        return b",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:48:26.819Z"
+  },
+  "submissionId": 142,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cfc6313f449218209340"
+  },
+  "userId": "6982c72598be081303a0d2b4",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n    long max1=LONG_MIN;\n    long max2=LONG_MIN;\n    long max3=LONG_MIN;\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max1){\n            max1=nums[i];\n        }\n    }\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max2 && nums[i]!=max1){\n            max2=nums[i];\n        }\n    }\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max3 && nums[i]!=max1 && nums[i]!=max2){\n            max3=nums[i];\n        }\n    }\n    if(max1==max2){\n        return max1;\n    }\n    for(int i=0;i<numsSize;i++){\n        if(nums[i]>max3 && nums[i]!=max1 && nums[i]!=max2){\n            max3=nums[i];\n        }\n    }\n    if(max3==LONG_MIN){\n        return max1;\n    }\n    return max3;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:49:10.384Z"
+  },
+  "submissionId": 143,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cfc7313f449218209346"
+  },
+  "userId": "6982c6b0313f4492182083e3",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\nint thirdMax(int* nums, int numsSize) {\n    long int m1=LONG_MIN,m2=LONG_MIN,m3=LONG_MIN;\n    int i;\n    for(i=0;i<numsSize;i++){\n        if(nums[i]==m1 || nums[i]==m2 || nums[i]==m3) continue;\n        if(nums[i]>m1){\n            m3=m2;\n            m2=m1;\n            m1=nums[i];\n        }\n        else if(nums[i]>m2){\n            m3=m2;\n            m2=nums[i];\n        }\n        else if(nums[i]>m3)\n            m3=nums[i];\n\n    }\n    if(m3==LONG_MIN){\n        return(m1);\n    }\n    return (m3);\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:49:11.752Z"
+  },
+  "submissionId": 144,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cfef313f449218209503"
+  },
+  "userId": "6982c6b4313f4492182083f9",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\nint climbStairs(int n)\n{\n    if (n == 1)\n        return 1;\n    if (n == 2)\n        return 2;\n\n    int prev1 = 1;\n    int prev2 = 2;\n    int curr;\n\n    for (int i = 3; i <= n; i++)\n    {\n        curr = prev1 + prev2;\n        prev1 = prev2;\n        prev2 = curr;\n    }\n\n    return prev2;\n}\n\n\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:49:51.249Z"
+  },
+  "submissionId": 145,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982cff4313f449218209515"
+  },
+  "userId": "6982c6b4313f4492182083f9",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\nint climbStairs(int n)\n{\n    if (n == 1)\n        return 1;\n    if (n == 2)\n        return 2;\n\n    int prev1 = 1;\n    int prev2 = 2;\n    int curr;\n\n    for (int i = 3; i <= n; i++)\n    {\n        curr = prev1 + prev2;\n        prev1 = prev2;\n        prev2 = curr;\n    }\n\n    return prev2;\n}\n\n\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:49:56.760Z"
+  },
+  "submissionId": 146,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d000313f449218209523"
+  },
+  "userId": "6982c7872e6930829d349b9a",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n\n\n        \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:50:08.041Z"
+  },
+  "submissionId": 147,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d004313f449218209529"
+  },
+  "userId": "6982c73698be081303a0d2ed",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n\n    long first = LONG_MIN;\n    long second = LONG_MIN;\n    long third = LONG_MIN;\n\n    for (int i = 0; i < numsSize; i++) {\n        if (nums[i] > first) {\n            first = nums[i];\n        }\n    }\n\n    for (int i = 0; i < numsSize; i++) {\n        if (nums[i] < first && nums[i] > second) {\n            second = nums[i];\n        }\n    }\n\n    for (int i = 0; i < numsSize; i++) {\n        if (nums[i] < second && nums[i] > third) {\n            third = nums[i];\n        }\n    }\n\n    int distinctCount = 0;\n    if (first != LONG_MIN) distinctCount++;\n    if (second != LONG_MIN) distinctCount++;\n    if (third != LONG_MIN) distinctCount++;\n\n    if (distinctCount < 3) {\n        return (int)first;\n    } else {\n        return (int)third;\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:50:12.045Z"
+  },
+  "submissionId": 148,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d077313f449218209702"
+  },
+  "userId": "6982c6c3313f449218208485",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Arrays.sort(nums);\n        for (int i=0; i<nums.length/2;i++) {\n            int temp = nums[i];\n            nums[i] = nums[nums.length - 1 - i];\n            nums[nums.length - 1 - i] = temp;\n        }\n        int elemCounted = 1;\n        int prevElem=nums[0];\n        for (int i = 1; i<nums.length;i++) {\n            if (nums[i] != prevElem) {\n                elemCounted += 1;\n                prevElem = nums[i];\n            }\n            if (elemCounted == 3) {\n                return nums[i];\n            }\n        }\n        return nums[0];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:52:07.743Z"
+  },
+  "submissionId": 149,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d096313f449218209a4c"
+  },
+  "userId": "6982c7872e6930829d349b9a",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n      int x=0,y=1,sum=0;\n        for(int i=0;i<n;i++)\n        {\n            sum=x+y;\n            x=y;\n            y=sum;\n        }\n\n        return sum;\n\n        \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:52:38.250Z"
+  },
+  "submissionId": 150,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d097313f449218209a52"
+  },
+  "userId": "6982c6e1313f44921820854c",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "python",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int a = 1;\n        int b = 2;\n        if(n <= 2)\n        {\n            return n;\n        }\n        else \n        {\n            for(int i=2;i<n;i++)\n            {\n                int c = a+b;\n                a = b;\n                b = c;\n            }\n            return b;\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:52:39.657Z"
+  },
+  "submissionId": 151,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d098313f449218209a5e"
+  },
+  "userId": "6982c775ba4a788c6d48a804",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nint thirdMax(int* nums, int numsSize) {\n   long long max=LLONG_MIN;\n   long long max2=LLONG_MIN;\n   long long max3=LLONG_MIN;\n\n   for(int i=0;i<numsSize;i++)\n   {\n    if(nums[i]==max || nums[i]==max2 || nums[i]==max3)\n    continue;\n    if(nums[i]>max)\n    {\n        max3=max2;\n        max2=max;\n        max=nums[i];\n    }\n    else if(nums[i]>max2)\n    {\n        max3=max2;\n        max2=nums[i];\n    }\n    else if(nums[i]>=max3)\n    {\n        max3=nums[i];\n    }\n   }\n   if(max3==LLONG_MIN)\n   return max;\n\n   return max3;\n}\n    \nint main()\n{\nint n;\nscanf(\"%d\",&n);\nint a[n];\nfor(int i=0;i<n;i++)\n{\nscanf(\"%d\",&a[i]);\n}\nprintf(\"%d\",thirdMax(a,n));\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:52:40.725Z"
+  },
+  "submissionId": 152,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d09b313f449218209a64"
+  },
+  "userId": "6982c71b98be081303a0d280",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "#include <limits.h>\n\nclass Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n        int max = getMax(nums);\n        int trueMax = max;\n        remove(nums, max);\n        \n        for (int i=0; i<2; i++) {\n            if(nums.empty()) return trueMax;\n            max = getMax(nums);\n            remove(nums, max);\n        }\n        return max;\n    }\n\n    int getMax(vector<int>& nums) {\n        int max= INT_MIN;\n        for (int num: nums) {\n            if (num > max) max = num;\n        }\n        return max;\n    }\n    \n    void remove(vector<int>& nums, int val) {\n        for (int i=0; i<nums.size(); i++) {\n            if (nums[i] == val){\n                nums.erase(nums.begin() + i);\n                i--;\n            }\n        }\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:52:43.126Z"
+  },
+  "submissionId": 153,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d09e313f449218209a6a"
+  },
+  "userId": "6982ca0f313f449218208ad8",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int[] arr=new int[n+1];\n        arr[0]=1;\n        arr[1]=1;\n        for(int i=2;i<n+1;i++){\n            arr[i]=arr[i-1]+arr[i-2];\n        }\n        return arr[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:52:46.730Z"
+  },
+  "submissionId": 154,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0a6313f449218209a82"
+  },
+  "userId": "6982c904503a1536cfa61d9e",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int compare(const void *a, const void *b){\n    int arg1 = *(const int *)a;\n    int arg2 = *(const int *)b;\n    if(arg1>arg2) return -1;\n    if(arg1<arg2) return 1;\n    return 0;\n}\n\n\nint thirdMax(int* nums, int numsSize) {\n    qsort(nums, numsSize, sizeof(int), compare);\n    int i=0;\n    for(int j=1; j<numsSize; j++){\n        if(nums[i]!=nums[j]){\n            i++;\n            nums[i]=nums[j];\n        }\n    }\n    numsSize = i+1;\n    int val;\n\n    if(numsSize>=3)\n        val = nums[2];\n    else\n        val = nums[0];\n    \n    return val;\n\n\n\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:52:54.972Z"
+  },
+  "submissionId": 155,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0ba313f449218209ab2"
+  },
+  "userId": "6982c71098be081303a0d24b",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=3) return n;\n        int prev1=2, prev2=3, curr=0;\n        for(int i=3;i<n;i++){\n            curr=prev1+prev2;\n            prev1=prev2;\n            prev2=curr;\n        }\n        return curr;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:53:14.955Z"
+  },
+  "submissionId": 156,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0cb313f449218209ae2"
+  },
+  "userId": "6982c71c98be081303a0d28b",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\nint climbStairs(int n) {\n    long sum=0,arr[46];\n    arr[0]=1,arr[1]=1;\n    for(int i=2;i<=45;i++)\n    {\n        arr[i]=0;\n        arr[i]=arr[i-1]+arr[i-2];\n        \n\n\n    }\n    return arr[n];\n}\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:53:31.776Z"
+  },
+  "submissionId": 157,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0cf313f449218209ae8"
+  },
+  "userId": "6982c71c98be081303a0d28b",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\nint climbStairs(int n) {\n    long sum=0,arr[46];\n    arr[0]=1,arr[1]=1;\n    for(int i=2;i<=45;i++)\n    {\n        arr[i]=0;\n        arr[i]=arr[i-1]+arr[i-2];\n        \n\n\n    }\n    return arr[n];\n}\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:53:35.410Z"
+  },
+  "submissionId": 158,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0d0313f449218209aee"
+  },
+  "userId": "6982c71c98be081303a0d28b",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\nint climbStairs(int n) {\n    long sum=0,arr[46];\n    arr[0]=1,arr[1]=1;\n    for(int i=2;i<=45;i++)\n    {\n        arr[i]=0;\n        arr[i]=arr[i-1]+arr[i-2];\n        \n\n\n    }\n    return arr[n];\n}\n    \n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:53:36.031Z"
+  },
+  "submissionId": 159,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0e4313f449218209b00"
+  },
+  "userId": "6982c6e1313f449218208550",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "https://leetcode.com/problems/third-maximum-number/submissions/1907494226/",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:53:56.241Z"
+  },
+  "submissionId": 160,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0f7313f449218209b12"
+  },
+  "userId": "6982c75b313f449218208709",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int[] dp = new int[45];\n        dp[0] = 1;dp[1] = 2;\n        for(int i=2;i<n;i++){\n            dp[i] = dp[i-1]+dp[i-2];\n        }\n        return dp[n-1];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:54:15.028Z"
+  },
+  "submissionId": 161,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0f9313f449218209b18"
+  },
+  "userId": "6982c904503a1536cfa61d9e",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "#include <stdio.h>\n\n\nint memo[46];\n\nint climbStairs_recursive(int n) {\n    if (n <= 2) {\n        return n; \n    }\n    \n    if (memo[n] != 0) {\n        return memo[n];\n    }\n    \n       memo[n] = climbStairs_recursive(n - 1) + climbStairs_recursive(n - 2);\n    \n    return memo[n];\n}\n\n\nint climbStairs(int n) {\n    \n    for (int i = 0; i <= n; i++) {\n        memo[i] = 0;\n    }\n    return climbStairs_recursive(n);\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:54:17.648Z"
+  },
+  "submissionId": 162,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0fa313f449218209b1e"
+  },
+  "userId": "6982c75b313f449218208709",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int[] dp = new int[45];\n        dp[0] = 1;dp[1] = 2;\n        for(int i=2;i<n;i++){\n            dp[i] = dp[i-1]+dp[i-2];\n        }\n        return dp[n-1];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:54:18.462Z"
+  },
+  "submissionId": 163,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d0fb313f449218209b24"
+  },
+  "userId": "6982c732313f449218208696",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int climbStairs(int n) {\n        if(n==1)return 1;\n        if(n==2)return 2;\n        int sum=0;\n        int f1=1,f2=2;\n       for(int i=3;i<=n;i++){\n          sum=f1+f2;\n          f1=f2;\n          f2=sum;\n       }\n       return sum;\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:54:19.102Z"
+  },
+  "submissionId": 164,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d122313f449218209ce1"
+  },
+  "userId": "6982c6e1313f449218208550",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long max1=Long.MIN_VALUE,max2=Long.MIN_VALUE,max3=Long.MIN_VALUE;\n       for(int i=0;i<nums.length;i++)\n       {     long n=nums[i];\n            if(max1==n|| max2==n|| max3==n) continue;\n            if(n>max1){\n                max3=max2;\n                max2=max1;\n                max1=n;\n            }else if(n>max2){\n                max3=max2;\n                max2=n;\n            }else if(n>max3) max3=n;\n        }\n        return (int)((max3==Long.MIN_VALUE)?max1:max3);\n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:54:58.743Z"
+  },
+  "submissionId": 165,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d126313f449218209ced"
+  },
+  "userId": "6982c6e1313f449218208550",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long max1=Long.MIN_VALUE,max2=Long.MIN_VALUE,max3=Long.MIN_VALUE;\n       for(int i=0;i<nums.length;i++)\n       {     long n=nums[i];\n            if(max1==n|| max2==n|| max3==n) continue;\n            if(n>max1){\n                max3=max2;\n                max2=max1;\n                max1=n;\n            }else if(n>max2){\n                max3=max2;\n                max2=n;\n            }else if(n>max3) max3=n;\n        }\n        return (int)((max3==Long.MIN_VALUE)?max1:max3);\n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:55:02.013Z"
+  },
+  "submissionId": 166,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d143313f449218209cff"
+  },
+  "userId": "6982c6ee313f4492182085b4",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int sum = 0;\n        if(n == 1) return 1;\n        int[] dp = new int[n+1];\n        dp[0] = 1;\n        dp[1] = 1;\n        for(int i = 2;i <= n;i++){\n            dp[i] = dp[i - 1] + dp[i - 2];\n        }\n        \n        return dp[n];\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:55:31.978Z"
+  },
+  "submissionId": 167,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d146313f449218209d05"
+  },
+  "userId": "6982c70598be081303a0d230",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=1) return 1;\n        int[] dp=new int[n+1];\n        dp[0]=1;\n        dp[1]=1;\n        for(int i=2;i<n+1;i++){\n            dp[i]=dp[i-1]+dp[i-2];\n        }\n        return dp[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:55:34.139Z"
+  },
+  "submissionId": 168,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d154313f449218209d1d"
+  },
+  "userId": "6982c6e1313f449218208550",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=2) return n;\n        int a=1,b=1;\n        for(int i=1;i<n;i++){\n            int temp=a;\n            a=b;\n            b=temp+b;\n        }\n        return b;  \n          }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:55:48.833Z"
+  },
+  "submissionId": 169,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d159313f449218209d29"
+  },
+  "userId": "6982c724313f44921820866f",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        long f = Long.MIN_VALUE;\n        long s = Long.MIN_VALUE;\n        long t = Long.MIN_VALUE;\n        \n        for(int num:nums)\n        {\n            if(num==f ||num==s||num==t) \n            {continue;}\n            if(num>f)\n            {\n                t=s;\n                s=f;\n                f=num;\n            }\n            else if(num>s)\n            {\n                t=s;\n                s=num;\n            }\n            else if(num>t)\n            {\n                t=num;\n            }\n        }\n       return (t==Long.MIN_VALUE)? (int)f:(int)t;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:55:53.749Z"
+  },
+  "submissionId": 170,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d15c313f449218209d2f"
+  },
+  "userId": "6982c7991ce3d38f23ae7eb7",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n == 1) return 1;\n        if(n == 2) return 2;\n        int a = 1,b = 2,c = 0;\n        for(int i = 3;i <= n; i++){\n            c = a + b;\n            a = b;\n            b = c;\n        }\n        return c;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:55:56.279Z"
+  },
+  "submissionId": 171,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d15d313f449218209d35"
+  },
+  "userId": "6982c6d3313f4492182084f8",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nint thirdMax(int* nums, int numsSize) {\n        int m1=INT_MIN,m2=INT_MIN,m3=INT_MIN,f=0,c=0;\n        for(int i=0;i<numsSize;i++){\n            if(m1<nums[i]){\n                m1=nums[i];\n            }\n        }\n        for(int i=0;i<numsSize;i++){\n            if(m2<nums[i] && m1!=nums[i]){\n                m2=nums[i];\n            }\n        }\n        for(int i=0;i<numsSize;i++){\n            if(m3<=nums[i] && m2!=nums[i] && m1!=nums[i]){\n                m3=nums[i];\n                f=1;\n            }\n        }\n        if(f==0)return m1;\n        return m3;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:55:57.602Z"
+  },
+  "submissionId": 172,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d169313f449218209d41"
+  },
+  "userId": "6982c6ab313f449218208354",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n    int first,second,third;\n    if(numsSize<3){\n        if(nums[0]>nums[1]){\n            return nums[0];\n        }else{\n            return nums[1];\n        }\n    }\n    else{\n        for (int i = 0; i < numsSize; i++) {\n            int n = nums[i];\n            if (n == first || n == second || n == third)\n                continue;\n            if (n > first) {\n                third = second;\n                second = first;\n                first = n;\n            }\n            else if (n > second) {\n                third = second;\n                second = n;\n            }\n            else if (n > third) {\n                third = n;\n            }\n        }\n    return third;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:56:09.560Z"
+  },
+  "submissionId": 173,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d17e313f449218209d59"
+  },
+  "userId": "6982c724313f44921820866f",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=2) return n;\n\n        int a=1;\n        int b=2;\n        for(int i=3;i<=n;i++)\n        {\n            int c=a+b;\n            a=b;\n            b=c;\n        }\n        return b;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:56:30.715Z"
+  },
+  "submissionId": 174,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d184313f449218209d5f"
+  },
+  "userId": "6982c71198be081303a0d250",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n==1){\n            return 1;\n        }\n        if(n==2){\n            return 2;\n        }\n      int a=1,b=2,c=0;\n      for(int i=3;i<=n;i++){\n        c=a+b;\n        a=b;\n        b=c;\n      }\n      return c;  \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:56:36.375Z"
+  },
+  "submissionId": 175,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d1bd313f449218209d7d"
+  },
+  "userId": "6982c6f3313f4492182085d1",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nint thirdMax(int* nums, int numsSize) {\n    long long int max1=LONG_MIN, max2=LONG_MIN, max3=LONG_MIN;\n    for (int i=0;i<numsSize;i++) {\n        int n=nums[i];\n        if (n==max1||n==max2||n==max3) \n        continue;\n        if (n>max1) {\n            max3=max2;\n            max2=max1;\n            max1=n;\n        } else if(n>max2) {\n            max3=max2;\n            max2=n;\n        } else if(n>max3) {\n            max3=n;\n        }\n    }\n    if(max3==LONG_MIN){\n        return max1;\n    }\n    return max3;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:57:33.626Z"
+  },
+  "submissionId": 176,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d1c0313f449218209d83"
+  },
+  "userId": "6982c6f3313f4492182085d1",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nint thirdMax(int* nums, int numsSize) {\n    long long int max1=LONG_MIN, max2=LONG_MIN, max3=LONG_MIN;\n    for (int i=0;i<numsSize;i++) {\n        int n=nums[i];\n        if (n==max1||n==max2||n==max3) \n        continue;\n        if (n>max1) {\n            max3=max2;\n            max2=max1;\n            max1=n;\n        } else if(n>max2) {\n            max3=max2;\n            max2=n;\n        } else if(n>max3) {\n            max3=n;\n        }\n    }\n    if(max3==LONG_MIN){\n        return max1;\n    }\n    return max3;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:57:36.633Z"
+  },
+  "submissionId": 177,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d1c6313f449218209d89"
+  },
+  "userId": "6982c71f98be081303a0d2a2",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n        long f=INT_MIN;\n        long s=INT_MIN;\n        long t=INT_MIN;\n        int c=nums.size();\n    unordered_set<int> seen;\n    vector<int> result;\n    for (int x : nums) {\n        if (seen.find(x) == seen.end()) {\n            seen.insert(x);\n            result.push_back(x);\n        }\n    }\n        for(int i=0;i<result.size();i++){\n            if(result[i]>f){\n                t=s;\n                s=f;\n                f=result[i];\n            }\n            else if(result[i]>s){\n                t=s;\n                s=result[i];\n            }\n            else if(result[i]>t){\n                t=result[i];\n            }\n        }\n        if(result.size()<3){\n            return f;\n        }\n        else{\n            return t;\n        }\n        \n    }\n    \n};\n        \n  ",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:57:42.572Z"
+  },
+  "submissionId": 178,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d1eb313f449218209d95"
+  },
+  "userId": "6982c6de313f44921820853e",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Set<Integer> n=new HashSet<>();\n        for(int i:nums) n.add(i);\n        Integer[] a=n.toArray(new Integer[0]);\n       Arrays.sort(a);\n       if(a.length>=3)\n{       return a[a.length-3];\n \n   }\n   if(a.length<3) return a[a.length-1];\n    return 0;\n      }\n}    ",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:58:19.789Z"
+  },
+  "submissionId": 179,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d221313f449218209dcb"
+  },
+  "userId": "6982c6d7313f44921820851b",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\n     if(n==1)\n    return 1;\n    if(n==2)\n    return 2;\n    int n1=1,n2=2;\n    int ans=n1+n2;\n    for(int i=0;i<n-3;i++){\n        n1=n2;\n        n2=ans;\n        ans=n1+n2;\n    }\n    return ans;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:59:13.541Z"
+  },
+  "submissionId": 180,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d221313f449218209dd2"
+  },
+  "userId": "6982c6d7313f44921820851b",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() {\n     if(n==1)\n    return 1;\n    if(n==2)\n    return 2;\n    int n1=1,n2=2;\n    int ans=n1+n2;\n    for(int i=0;i<n-3;i++){\n        n1=n2;\n        n2=ans;\n        ans=n1+n2;\n    }\n    return ans;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:59:13.977Z"
+  },
+  "submissionId": 181,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d222313f449218209dd7"
+  },
+  "userId": "6982c6a6313f449218208344",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n    long long firstmax = LLONG_MIN;\n    long long secondmax = LLONG_MIN;\n    long long thirdmax = LLONG_MIN;\n    for(int i=0; i<numsSize; i++){\n        if(nums[i]==firstmax || nums[i]==secondmax || nums[i]==thirdmax){\n            continue;\n        }\n        else if(nums[i]>firstmax){\n            thirdmax = secondmax;\n            secondmax = firstmax;\n            firstmax = nums[i];\n        }\n        else if(nums[i]>secondmax){\n            thirdmax = secondmax;\n            secondmax = nums[i];\n        }\n        else if(nums[i]>thirdmax){\n            thirdmax = nums[i];\n        }\n        \n    }\n    return (thirdmax==LLONG_MIN)?firstmax:thirdmax;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:59:14.435Z"
+  },
+  "submissionId": 182,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d238313f449218209e29"
+  },
+  "userId": "6982c6ad313f4492182083d4",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "// Third Maximum Number\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n        sort(nums.begin(),nums.end());\n        int index=1;\n        for(int i=1;i<nums.size();i++){\n            if(nums[i]!=nums[i-1]){\n                nums[index]=nums[i];\n                index++;\n            }\n        }\n        if(index<3){\n        if(index==1){\n            return nums[0];\n        }else if(nums[0]<nums[1]){\n            return nums[1];\n        }else{\n            return nums[0];\n        }\n        }\n        return nums[index-3];\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:59:36.455Z"
+  },
+  "submissionId": 183,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d244313f449218209e47"
+  },
+  "userId": "6982c71398be081303a0d25b",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "// Third Maximum Number\n#include <limits.h>\n\nint thirdMax(int* nums, int numsSize) {\n    long first = LONG_MIN, second = LONG_MIN, third = LONG_MIN;\n\n    for (int i = 0; i < numsSize; i++) {\n        long x = nums[i];\n\n        if (x == first || x == second || x == third)\n            continue;\n\n        if (x > first) {\n            third = second;\n            second = first;\n            first = x;\n        } else if (x > second) {\n            third = second;\n            second = x;\n        } else if (x > third) {\n            third = x;\n        }\n    }\n\n    return (third == LONG_MIN) ? (int)first : (int)third;\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:59:48.554Z"
+  },
+  "submissionId": 184,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d24d313f449218209e59"
+  },
+  "userId": "6982c7ae98be081303a0d370",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        Map<Integer,Integer> m=new HashMap<>();\n        return climbing(n,m);\n    }\n    public int climbing(int n,Map<Integer,Integer> m){\n        if(n==0||n==1){\n            return 1;\n        }\n        if(!m.containsKey(n)){\n            m.put(n,climbing(n-1,m)+climbing(n-2,m));\n        }\n        return  m.get(n);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T04:59:57.099Z"
+  },
+  "submissionId": 185,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d261313f449218209e65"
+  },
+  "userId": "6982c74898be081303a0d326",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n        int count=0;\n        int first=INT_MIN;\n        {\n            for(int i=0;i<nums.size();i++)\n            {\n                first=max(first,nums[i]);\n\n            }\n            if(nums.size()<3)\n            {\n                return first;\n            }\n            else\n            {\n                count=1;\n                int second=INT_MIN;\n                for(int i=0;i<nums.size();i++)\n                {\n                    if(first>nums[i])\n                        second=max(second,nums[i]);\n                }\n                int third=INT_MIN;\n                for(int i=0;i<nums.size();i++)\n                {\n                    if(second>nums[i])\n                        third=max(third,nums[i]);\n                }\n\n                return third;\n\n\n        }\n    \n        \n    }\n\n\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:00:17.335Z"
+  },
+  "submissionId": 186,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d284313f449218209e7d"
+  },
+  "userId": "6982c72898be081303a0d2c3",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int n=input;\n        Map<Integer,Integer>m=new HashMap<>();\n        m.put(0,1);\n        m.put(1,1);\n        for(int i=2;i<=n;i++)\n        {\n            m.put(i,m.get(i-1)+m.get(i-2));\n        }\n        return m.get(n);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:00:52.433Z"
+  },
+  "submissionId": 187,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d294313f449218209e95"
+  },
+  "userId": "6982c72898be081303a0d2c3",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int n=input;\n        Map<Integer,Integer>m=new HashMap<>();\n        m.put(0,1);\n        m.put(1,1);\n        for(int i=2;i<=n;i++)\n        {\n            m.put(i,m.get(i-1)+m.get(i-2));\n        }\n        return m.get(n);\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:01:08.432Z"
+  },
+  "submissionId": 188,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d2c0313f449218209ea7"
+  },
+  "userId": "6982c6b0313f4492182083e3",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nint climbStairs(int n) {\n    long int p1=1;\n    long int p2=1;\n    for(int i=0;i<n;i++)\n    {\n        long int temp=p1;\n        p1=p1+p2;\n        p2=temp;\n    }\n    return (int)p2;\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:01:52.196Z"
+  },
+  "submissionId": 189,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d2d6313f449218209ec5"
+  },
+  "userId": "6982c6d8313f449218208520",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n    long int max1=LONG_MIN,max2=LONG_MIN,max3=LONG_MIN;\n    int i;\n    for(i=0;i<numsSize;i++){\n        if(nums[i]==max1 || nums[i]==max2 || nums[i]==max3) continue;\n        if(nums[i]>max1){\n            max3=max2;\n            max2=max1;\n            max1=nums[i];\n        }\n        else if(nums[i]>max2){\n            max3=max2;\n            max2=nums[i];\n        }\n        else if(nums[i]>max3)\n            max3=nums[i];\n\n    }\n    if(max3==LONG_MIN){\n        return(max1);\n    }\n    return (max3);\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:02:14.054Z"
+  },
+  "submissionId": 190,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d2ea313f449218209ee3"
+  },
+  "userId": "6982c6cd313f4492182084be",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "c",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nvoid solution() \n{\n   \n   \n    if(n==0||n==1)\n    return 1;\n     int s=1,e=1;\n    for(int i=2;i<=n;i++)\n    {\n    int t=e;\n    e=e+s;\n    s=t;\n    \n    }\n    return ;\n\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:02:34.847Z"
+  },
+  "submissionId": 191,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d306313f449218209ef5"
+  },
+  "userId": "6982c71e98be081303a0d296",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        int[] arr = new int[n+1];\n        arr[0]=1;\n        arr[1]=1;\n        for(int i = 2; i <= n; i++){\n            arr[i] = arr[i-1] + arr[i-2];\n        }\n        return arr[n];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:03:02.342Z"
+  },
+  "submissionId": 192,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d308313f449218209efb"
+  },
+  "userId": "6982c6c2313f449218208477",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        sets=set(nums)\n        nums=list(sets)\n        nums.sort()\n        if len(nums)<3:\n             return max(nums)\n        else:\n             return nums[-3]",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:03:04.583Z"
+  },
+  "submissionId": 193,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d322313f449218209f07"
+  },
+  "userId": "6982c6ab313f44921820835a",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "c",
+  "code": "int thirdMax(int* nums, int numsSize) {\n    for (int i = 0; i < numsSize; i++) {\n        for (int j = i + 1; j < numsSize; j++) {\n            if (nums[i] < nums[j]) {\n                int temp = nums[i];\n                nums[i] = nums[j];\n                nums[j] = temp;\n            }\n        }\n    }\n    int count, i = 0;\n    while (nums[i] != '\\0') {\n        if (nums[i] != nums[i+1]) {\n            continue;\n        }else{\n            nums[i + 1] = nums[i + 2];\n        }\n        i++;\n    }\n    return nums[2];\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:03:30.481Z"
+  },
+  "submissionId": 194,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d324313f449218209f0d"
+  },
+  "userId": "6982c6c3313f449218208485",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "java",
+  "code": "class Solution {\n    public int climbStairs(int n) {\n        if(n<=3)return n;\n        int p1=3,p2=2,cur=0;\n        for(int i=3;i<n;i++){\n            cur=p1+p2;\n            p2=p1;\n            p1=cur;\n        }\n        return cur;\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:03:32.759Z"
+  },
+  "submissionId": 195,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d338313f449218209f2b"
+  },
+  "userId": "6982c71298be081303a0d254",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int thirdMax(vector<int>& nums) {\n        int n = nums.size();\n        int max = nums[0];\n        int min = nums[0];\n        int sec = 0;\n        for(int i=0;i<n;i++){\n            if(nums[i] > max){\n                max = nums[i];\n            }\n        }\n        for(int i=0;i<n;i++){\n            if(nums[i] < min){\n                min = nums[i];\n            }\n        }\n        for(int i=0;i<n;i++){\n            if(nums[i] > min && nums[i] < max){\n                sec = nums[i];\n            }\n        }\n        if(sec > 0){\n            return max;\n        }\n        return min;\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:03:52.693Z"
+  },
+  "submissionId": 196,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d353313f449218209f43"
+  },
+  "userId": "6982c71298be081303a0d254",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "lass Solution {\npublic:\n    int climbStairs(int n) {\n        int count;\n        if(n==1){\n            count = 1;\n        }else if(n==2){\n            count = 2;\n        }else if(n % 2  == 0){\n            count=2;\n        }else if(n==3){\n            count = 3;\n        }else{\n            count = 1;\n        }\n        return count;\n\n\n        \n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:04:19.205Z"
+  },
+  "submissionId": 197,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d37a313f449218209f49"
+  },
+  "userId": "6982c72798be081303a0d2bb",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "python",
+  "code": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        nums = sorted(set(nums))\n        if len(nums) < 3:\n            return nums[-1]\n        return nums[-3]\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:04:58.128Z"
+  },
+  "submissionId": 198,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d38a313f449218209f61"
+  },
+  "userId": "6982c701313f449218208603",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] n)\n    {\n       int l=n.length;\n       int fmax=Integer.MIN_VALUE,smax=Integer.MIN_VALUE,tmax=Integer.MIN_VALUE;\n       HashSet<Integer> uni=new HashSet<>();\n       for(int i:n)\n       {\n          uni.add(i);\n       }\n       for(int i:uni)\n       {\n          if(fmax<i)\n          {\n            tmax=smax;\n            smax=fmax;\n            fmax=i;\n          }\n          else if(smax<i && smax!=fmax)\n          {\n             tmax=smax;\n             smax=i;\n          }\n          else if(tmax<i && tmax!=smax && tmax!=fmax)\n          {\n             tmax=i;\n          }\n       }\n       if(uni.size()<=2) return fmax;\n       return tmax;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:05:14.155Z"
+  },
+  "submissionId": 199,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d3b2313f449218209f79"
+  },
+  "userId": "6982c6ad313f4492182083d4",
+  "problemId": "698234bd2fd0434e56a60d41",
+  "problemTitle": "Climbing Stairs",
+  "language": "cpp",
+  "code": "// Climbing Stairs\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    void solution() {\n         if(n==1)return 1;\n        if(n==2)return 2;\n        long first = 1;\n        long next = 2;\n        long val =0;\n        for(int i=3;i<=n;i++)\n        {\n            val = first+next;\n            first = next;\n            next = val;\n        }\n        return (int)val;\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:05:54.025Z"
+  },
+  "submissionId": 200,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d3b8313f449218209f7f"
+  },
+  "userId": "6982c70598be081303a0d230",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Arrays.sort(nums);\n        int count=0;\n        for(int i=nums.length-1;i>0;i--){\n            if(nums[i]!=nums[i-1]) count++;\n            if(count==2) return nums[i-1];\n        }\n        return nums[nums.length-1];\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:06:00.734Z"
+  },
+  "submissionId": 201,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6982d3c2313f449218209f85"
+  },
+  "userId": "6982c7611ce3d38f23ae7ead",
+  "problemId": "698234bd2fd0434e56a6111b",
+  "problemTitle": "Third Maximum Number",
+  "language": "java",
+  "code": "class Solution {\n    public int thirdMax(int[] nums) {\n        Set<Integer> n= new HashSet<>();\n        for(int x : nums){\n            n.add(x);}\n        List<Integer>  l=new ArrayList<>(n);\n        Collections.sort(l);\n        if(l.size()==2) return l.get(1);\n        else if(l.size()==1) return l.get(0);\n        else return l.get(l.size()-3);}}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-04T05:06:10.488Z"
+  },
+  "submissionId": 202,
+  "__v": 0
+}]
