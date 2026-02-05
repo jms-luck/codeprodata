@@ -1,0 +1,1696 @@
+[{
+  "_id": {
+    "$oid": "698418f01da9d8ecc90aaa09"
+  },
+  "userId": "6984183f1da9d8ecc90aa499",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int max=0, n=height.length;\n        int left[]=new int[n], right[]=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++)\n        {\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--)\n        {\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++)\n        {\n            max+=(Math.min(left[i],right[i])-height[i]);\n        }\n        return max;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:36.579Z"
+  },
+  "submissionId": 220,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698418f21da9d8ecc90aaa23"
+  },
+  "userId": "698418431da9d8ecc90aa4b2",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int water=0,n=height.length,left=0,right=0;\n        int i=0,j=n-1;\n        while(i<j){\n            left=Math.max(left,height[i]);\n            right=Math.max(right,height[j]);\n            if(left<right)\n                water+=left-height[i++];\n            else\n                water+=right-height[j--];\n        }\n        return water;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:38.034Z"
+  },
+  "submissionId": 221,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698418f61da9d8ecc90aaa3b"
+  },
+  "userId": "698418221da9d8ecc90aa3f4",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        if(height.length==1) return 0;\n        int water_trapped=0;\n        int prevmaxindex=0;\n        int blocks=0;\n        for(int i=1;i<height.length;i++){\n            if(height[i]>=height[prevmaxindex]){\n                water_trapped+=(((i-prevmaxindex-1)*height[prevmaxindex])-blocks);\n                blocks=0;\n                prevmaxindex=i;\n            }else{\n                blocks+=height[i];\n            }\n        }\n        blocks=0;\n        int newmaxindex=height.length-1;\n        for(int i=newmaxindex-1;i>=prevmaxindex;i--){\n            if(height[i]>=height[newmaxindex]){\n                water_trapped+=(((newmaxindex-i-1)*height[newmaxindex])-blocks);\n                blocks=0;\n                newmaxindex=i;\n            }else{\n                blocks+=height[i];\n            }\n        }  \n        return water_trapped;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:42.344Z"
+  },
+  "submissionId": 222,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698418f71da9d8ecc90aaa41"
+  },
+  "userId": "698418371da9d8ecc90aa47c",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n=height.length;\n        int maxWater=0, leftMax[]=new int[n],rightMax[]=new int[n];\n        leftMax[0]=height[0];\n        rightMax[n-1]=height[n-1];\n        for(int i=1;i<n;i++){\n            leftMax[i]=Math.max(leftMax[i-1],height[i]);\n        }\n        for(int i=n-2;i>=0;i--){\n            rightMax[i]=Math.max(rightMax[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            maxWater+=(Math.min(rightMax[i],leftMax[i]))-height[i];\n        }\n        return maxWater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:43.090Z"
+  },
+  "submissionId": 223,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698418f81da9d8ecc90aaa4d"
+  },
+  "userId": "698418261da9d8ecc90aa403",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n=height.length;\n        int water = 0;\n        int left[]=new int[n];\n        int right[]=new int[n];\n        left[0] = height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1] = height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            water += Math.min(left[i], right[i]) - height[i];\n        }\n        return water;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:44.231Z"
+  },
+  "submissionId": 224,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698418f81da9d8ecc90aaa53"
+  },
+  "userId": "698418421da9d8ecc90aa4ad",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int trap=0;\n        int maxLeft=0;\n        int maxRight=0;\n        int left=0;\n        int right=height.length-1;\n        while(left<right){\n            maxLeft=Math.max(maxLeft,height[left]);\n            maxRight=Math.max(maxRight,height[right]);\n            trap+=maxLeft-height[left];\n            trap+=maxRight-height[right];\n            if(maxLeft<maxRight){\n                left++;\n            }\n            else{\n                right--;\n            }\n        }\n        return trap;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:44.363Z"
+  },
+  "submissionId": 225,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698418fd1da9d8ecc90aaa73"
+  },
+  "userId": "698418821da9d8ecc90aa545",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int maxwater=0,n=height.length;\n        int lmax[]= new int[n],rmax[]=new int[n];\n        lmax[0]=height[0];\n        for(int i=1;i<n;i++){\n            lmax[i]=Math.max(lmax[i-1],height[i]);\n        }\n        rmax[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--)\n        {\n            rmax[i]=Math.max(rmax[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++)\n        {\n            maxwater+=(Math.min(lmax[i],rmax[i])-height[i]);\n        }\n        return maxwater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:49.600Z"
+  },
+  "submissionId": 226,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698418ff1da9d8ecc90aaa7a"
+  },
+  "userId": "698418281da9d8ecc90aa416",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution\n{\n    public int trap(int[] height)\n    {\n        int leftmax=0;\n        int rightmax=0;\n        int total=0;\n        int left=0;\n        int right=height.length-1;\n        while(left<right){\n            if(height[left]<=height[right]){\n                if(leftmax<height[left]){\n                    leftmax=height[left];         \n                }\n                total=total+(leftmax-height[left]);\n                left=left+1;\n            }else{\n                if(rightmax<height[right]){\n                    rightmax=height[right];\n                }\n                total=total+(rightmax-height[right]);\n                right=right-1;\n            }\n        }\n        return total;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:51.302Z"
+  },
+  "submissionId": 227,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419021da9d8ecc90aaaa1"
+  },
+  "userId": "698418461da9d8ecc90aa4ca",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int left=0,right=height.length-1;\n        int lm=0,rm=0,total=0;\n        while(left<right){\n            lm=Math.max(lm,height[left]);\n            rm=Math.max(rm,height[right]);\n            if(lm<rm){\n                total+=lm-height[left];\n                left++;\n            }else{\n                total+=rm-height[right];\n                right--;\n            }\n        }\n        return total;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:13:54.659Z"
+  },
+  "submissionId": 228,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419081da9d8ecc90aaae6"
+  },
+  "userId": "6984181b1da9d8ecc90aa3d1",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        boolean zeroinFirstCol = false;\n        for (int row = 0; row < matrix.length; row++) {\n            if (matrix[row][0] == 0) zeroinFirstCol = true;\n            for (int col = 1; col < matrix[0].length; col++) {\n                if (matrix[row][col] == 0) {\n                    matrix[row][0] = 0;\n                    matrix[0][col] = 0;\n                }\n            }\n        }\n\n        for (int row = matrix.length - 1; row >= 0; row--) {\n            for (int col = matrix[0].length - 1; col >= 1; col--) {\n                if (matrix[row][0] == 0 || matrix[0][col] == 0) {\n                    matrix[row][col] = 0;\n                }\n            }\n            if (zeroinFirstCol) {\n                matrix[row][0] = 0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:00.664Z"
+  },
+  "submissionId": 229,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984190a1da9d8ecc90aaaf0"
+  },
+  "userId": "698418191da9d8ecc90aa3c2",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int maxWater=0, N=height.length;\n        int leftMax[]= new int[N],rightMax[]=new int[N];\n        leftMax[0]=height[0];\n        for (int i=1; i<N;i++){\n            leftMax[i]=Math.max(leftMax[i-1],height[i]); \n        }\n        rightMax[N-1]=height[N-1];\n        for(int i=N-2; i>=0;i--){\n            rightMax[i]=Math.max(rightMax[i+1],height[i]);\n        }\n        for(int i=0; i<N; i++){\n            maxWater+=(Math.min(leftMax[i], rightMax[i])-height[i]);\n        }\n        return maxWater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:02.812Z"
+  },
+  "submissionId": 230,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984190a1da9d8ecc90aaaf4"
+  },
+  "userId": "698418341da9d8ecc90aa467",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "cpp",
+  "code": "// Trapping Rain Water\n// TODO: Implement solution\n\nclass Solution {\npublic:\n    int trap(vector<int>& height) {\n        int left = 0, right = height.size() - 1;\n        int leftMax = 0, rightMax = 0;\n        int water = 0;\n\n        while (left < right) {\n            if (height[left] < height[right]) {\n                if (height[left] >= leftMax) {\n                    leftMax = height[left];\n                } else {\n                    water += (leftMax - height[left]);\n                }\n                left++;\n            } else {\n                if (height[right] >= rightMax) {\n                    rightMax = height[right];\n                } else {\n                    water += (rightMax - height[right]);\n                }\n                right--;\n            }\n        }\n\n        return water;\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:02.861Z"
+  },
+  "submissionId": 231,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984190f1da9d8ecc90aab09"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0;\n        int n=height.length;\n        int[] left=new int[n];\n        int[] right=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(left[i],right[i])-height[i];\n        }\n        \nreturn count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:07.425Z"
+  },
+  "submissionId": 232,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984190f1da9d8ecc90aab0f"
+  },
+  "userId": "698418311da9d8ecc90aa455",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int N=height.length, maxHeight=0;\n        int leftMax[]=new int[N];\n        int rightMax[]=new int[N];\n        leftMax[0]=height[0];\n        for(int i=1;i<N;i++){\n            leftMax[i]=Math.max(leftMax[i-1],height[i]);\n        }\n        rightMax[N-1]=height[N-1];\n        for(int i=N-2;i>=0;i--){\n            rightMax[i]=Math.max(rightMax[i+1],height[i]);\n        }\n        for(int i=0;i<N;i++){\n            maxHeight+=Math.min(leftMax[i],rightMax[i])-height[i];\n        }\n        return maxHeight;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:07.768Z"
+  },
+  "submissionId": 233,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419131da9d8ecc90aab29"
+  },
+  "userId": "698418301da9d8ecc90aa44a",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int  maxwater=0,n=height.length;\n        int leftmax[]=new int[n],rightmax[]=new int[n];\n        leftmax[0] = height[0];\n        for(int i=1;i<n;i++)\n        {\n            leftmax[i]=Math.max(leftmax[i-1],height[i]);\n        }\n        rightmax[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--)\n        {\n            rightmax[i]=Math.max(rightmax[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++)\n        {\n            maxwater+=Math.min(leftmax[i],rightmax[i])-height[i];\n        }\n        return maxwater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:11.993Z"
+  },
+  "submissionId": 234,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419141da9d8ecc90aab2f"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0;\n        int n=height.length;\n        int[] left=new int[n];\n        int[] right=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(left[i],right[i])-height[i];\n        }\n        \nreturn count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:12.436Z"
+  },
+  "submissionId": 235,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419151da9d8ecc90aab36"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0;\n        int n=height.length;\n        int[] left=new int[n];\n        int[] right=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(left[i],right[i])-height[i];\n        }\n        \nreturn count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:13.101Z"
+  },
+  "submissionId": 236,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419151da9d8ecc90aab3d"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0;\n        int n=height.length;\n        int[] left=new int[n];\n        int[] right=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(left[i],right[i])-height[i];\n        }\n        \nreturn count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:13.706Z"
+  },
+  "submissionId": 237,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419151da9d8ecc90aab45"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0;\n        int n=height.length;\n        int[] left=new int[n];\n        int[] right=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(left[i],right[i])-height[i];\n        }\n        \nreturn count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:13.902Z"
+  },
+  "submissionId": 238,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419161da9d8ecc90aab4f"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0;\n        int n=height.length;\n        int[] left=new int[n];\n        int[] right=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(left[i],right[i])-height[i];\n        }\n        \nreturn count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:14.071Z"
+  },
+  "submissionId": 239,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419161da9d8ecc90aab55"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0;\n        int n=height.length;\n        int[] left=new int[n];\n        int[] right=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(left[i],right[i])-height[i];\n        }\n        \nreturn count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:14.281Z"
+  },
+  "submissionId": 240,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419171da9d8ecc90aab6d"
+  },
+  "userId": "698418261da9d8ecc90aa403",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n=height.length;\n        int water = 0;\n        int left[]=new int[n];\n        int right[]=new int[n];\n        left[0] = height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[n] = height[n-1];\n        for(int i=n-2;i>=0;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            water += Math.min(left[i], right[i]) - height[i];\n        }\n        return water;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:15.850Z"
+  },
+  "submissionId": 241,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419171da9d8ecc90aab73"
+  },
+  "userId": "698418441da9d8ecc90aa4c1",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int ct=0,n=height.length;\n        int left[]=new int[n];\n        int right[]=new int[n];\n        left[0]=height[0];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(height[i],left[i-1]);\n        }right[n-1]=height[n-1];\n        for(int j=n-2;j>=0;j--){\n            right[j]=Math.max(right[j+1],height[j]);\n        }\n        for(int i=0;i<n;i++){\n            ct+=(Math.min(left[i],right[i])-height[i]);\n        }return ct;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:15.948Z"
+  },
+  "submissionId": 242,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984191c1da9d8ecc90aab9e"
+  },
+  "userId": "6984183f1da9d8ecc90aa499",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int r = matrix.length;\n        int c = matrix[0].length;\n        boolean[] row = new boolean[r];\n        boolean[] col = new boolean[c];\n        for (int i = 0; i < r; i++) {\n            for (int j = 0; j < c; j++) {\n                if (matrix[i][j] == 0) {\n                    row[i] = true;\n                    col[j] = true;\n                }\n            }\n        }\n        for (int i = 0; i < r; i++) {\n            if (row[i]) {\n                for (int j = 0; j < c; j++) {\n                    matrix[i][j] = 0;\n                }\n            }\n        }\n        for (int j = 0; j < c; j++) {\n            if (col[j]) {\n                for (int i = 0; i < r; i++) {\n                    matrix[i][j] = 0;\n                }\n            }\n        }\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:20.956Z"
+  },
+  "submissionId": 243,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984191d1da9d8ecc90aaba4"
+  },
+  "userId": "6984181a1da9d8ecc90aa3c6",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n=height.length;\n        int[] leftmax=new int[n];\n        int[] rightmax=new int[n];\n        leftmax[0]=height[0];\n        int count=0;\n        for(int i=1;i<n;i++){\n            leftmax[i]=Math.max(leftmax[i-1],height[i]);\n        }\n        rightmax[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            rightmax[i]=Math.max(rightmax[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            count+=Math.min(leftmax[i],rightmax[i])-height[i];\n        }\n        return count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:21.416Z"
+  },
+  "submissionId": 244,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984191d1da9d8ecc90aabaa"
+  },
+  "userId": "6984184c1da9d8ecc90aa4e6",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int maxWater = 0, n= height.length;\n        int[] leftmax = new int[n];\n        int[] rigmax = new int[n];\n\n        leftmax[0] = height[0];\n        rigmax[n-1] = height[n-1];\n\n        for(int i=1; i<n;i++){\n            leftmax[i] = Math.max(height[i], leftmax[i-1]);\n        }\n        for(int i = n-2;i>=0; i--){\n            rigmax[i] = Math.max(height[i], rigmax[i+1]);\n        }\n\n        for(int i=0; i< n; i++){\n            maxWater += Math.min(leftmax[i], rigmax[i]) - height[i];\n        }\n        return maxWater;\n\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:21.723Z"
+  },
+  "submissionId": 245,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419221da9d8ecc90aabc0"
+  },
+  "userId": "6984188a1da9d8ecc90aa554",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        HashSet<Integer> row = new HashSet<>();\n        HashSet<Integer> col = new HashSet<>();\n        for(int i=0;i<matrix.length;i++){\n            for(int j=0;j<matrix[0].length;j++){\n                if(matrix[i][j]==0){\n                    row.add(i);\n                    col.add(j);\n                }\n            }\n        }\n        for(int i=0;i<matrix.length;i++){\n            for(int j=0;j<matrix[0].length;j++){\n                if(row.contains(i)) matrix[i][j] = 0;\n                if(col.contains(j)) matrix[i][j] = 0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:26.291Z"
+  },
+  "submissionId": 246,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419221da9d8ecc90aabc8"
+  },
+  "userId": "698418411da9d8ecc90aa4a7",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int max=0;int n=height.length;\n        int left=0;int right=n-1;\n        int leftmax=height[0];int rightmax=height[n-1];\n        while(left<right){ \n            leftmax=Math.max(leftmax,height[left]);\n            rightmax=Math.max(rightmax,height[right]);\n            if(leftmax<rightmax){\n                max+=(leftmax-height[left++]);\n            }\n            else\n                max+=(rightmax-height[right--]);\n             \n        }\n        return max;\n}}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:26.899Z"
+  },
+  "submissionId": 247,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419231da9d8ecc90aabd5"
+  },
+  "userId": "6984186e1da9d8ecc90aa531",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int maxwater =0, n = height.length;\n        int l=0, r=n-1, lm = height[0], rm = height[n-1];\n        while(l<r){\n            lm = Math.max(lm, height[l]);\n            rm = Math.max(rm, height[r]);\n            if(lm < rm){\n                maxwater += lm - height[l++];\n            }\n            else{\n                maxwater += rm - height[r--];\n            }\n        }\n        return maxwater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:27.884Z"
+  },
+  "submissionId": 248,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419251da9d8ecc90aabe1"
+  },
+  "userId": "698418291da9d8ecc90aa421",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int rowFlag=0;\n        int colFlag=0;\n        for(int i=0;i<matrix.length;i++){\n            if(matrix[i][0]==0){\n                colFlag=1;\n                break;\n            }\n        }\n        for(int i=0;i<matrix[0].length;i++){\n            if(matrix[0][i]==0){\n                rowFlag=1;\n                break;\n            }\n        }\n        for(int i=1;i<matrix.length;i++){\n            for(int j=1;j<matrix[0].length;j++){\n                if(matrix[i][j]==0){\n                    matrix[i][0]=0;\n                    matrix[0][j]=0;\n                }\n            }\n        }\n        for(int i=1;i<matrix.length;i++){\n            for(int j=1;j<matrix[0].length;j++){\n                if(matrix[i][0]==0 || matrix[0][j]==0){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        if(rowFlag==1){\n            for(int i=0;i<matrix[0].length;i++){\n                matrix[0][i]=0;\n            }\n        }\n        if(colFlag==1){\n            for(int i=0;i<matrix.length;i++){\n                matrix[i][0]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:29.716Z"
+  },
+  "submissionId": 249,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419271da9d8ecc90aabe7"
+  },
+  "userId": "698418421da9d8ecc90aa4ad",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        boolean zeroinFirstCol = false;\n        for (int row = 0; row < matrix.length; row++) {\n            if (matrix[row][0] == 0) zeroinFirstCol = true;\n            for (int col = 1; col < matrix[0].length; col++) {\n                if (matrix[row][col] == 0) {\n                    matrix[row][0] = 0;\n                    matrix[0][col] = 0;\n                }\n            }\n        }\n\n        for (int row = matrix.length - 1; row >= 0; row--) {\n            for (int col = matrix[0].length - 1; col >= 1; col--) {\n                if (matrix[row][0] == 0 || matrix[0][col] == 0) {\n                    matrix[row][col] = 0;\n                }\n            }\n            if (zeroinFirstCol) {\n                matrix[row][0] = 0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:31.199Z"
+  },
+  "submissionId": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984192c1da9d8ecc90aac29"
+  },
+  "userId": "698418431da9d8ecc90aa4b2",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int R = matrix.length,C=matrix[0].length;\n        boolean firstR=false,firstC=false;\n        for(int r=0;r<R;++r){\n            for(int c=0;c<C;++c){\n                if(matrix[r][c]==0){\n                    if(r!=0)\n                        matrix[r][0]=0;\n                    else\n                        firstR=true;\n                    if(c!=0)\n                        matrix[0][c]=0;\n                    else\n                        firstC=true;\n                }\n            }\n        }\n        for(int r=1;r<R;++r){\n            for(int c=1;c<C;++c){\n                if(matrix[r][0]==0 ||  matrix[0][c]==0){\n                    matrix[r][c]=0;\n                }\n            }\n        }\n        if(firstC)\n            for(int r=0;r<R;++r)\n                matrix[r][0]=0;\n        if(firstR)\n            for(int c=0;c<C;++c)\n                matrix[0][c]=0;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:36.858Z"
+  },
+  "submissionId": 251,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419331da9d8ecc90aac67"
+  },
+  "userId": "698418371da9d8ecc90aa47c",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int [][] newmatrix=new int [matrix.length][matrix[0].length];\n        for(int i=0;i<newmatrix.length;i++){\n            for(int j=0;j<newmatrix[0].length;j++){\n                newmatrix[i][j]=matrix[i][j];\n            }\n        }\n        for (int i=0;i<matrix.length;i++){\n            for(int j=0;j<matrix[0].length;j++){\n                if(matrix[i][j]==0 && newmatrix[i][j]==0){\n                    for(int k=0;k<matrix.length;k++){\n                        matrix[k][j]=0;\n                    }\n                    for(int k=0;k<matrix[0].length;k++){\n                        matrix[i][k]=0;\n                    }\n                }\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:43.107Z"
+  },
+  "submissionId": 252,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419331da9d8ecc90aac7b"
+  },
+  "userId": "698418651da9d8ecc90aa520",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int len=height.length;\n     /*   int[] leftmax=new int[len];\n        int[] rightmax=new int[len];\n        leftmax[0]=height[0];\n        for(int i=1;i<len;i++){\n            leftmax[i]=Math.max(leftmax[i-1],height[i]);\n        }\n        rightmax[len-1]=height[len-1];\n        for(int i=len-2;i>=0;i--){\n            rightmax[i]=Math.max(height[i],rightmax[i+1]);\n        }\n        int water=0;\n        for(int i=0;i<len;i++){\n            water+=Math.max(0,Math.min(leftmax[i],rightmax[i])-height[i]);\n        }\n        return water;\n    }\n}\n*/\nint water=0;\nint left=0;\nint right=len-1;\nint leftmax=height[0],rightmax=height[len-1];\n\nwhile(left<right){\n    leftmax=Math.max(leftmax,height[left]);\n    rightmax=Math.max(rightmax,height[right]);\n    if(leftmax<rightmax){\n        water+=leftmax-height[left++];\n          }\n          else{\n            water+=rightmax-height[right--];\n          }\n    \n}\nreturn water;\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:43.904Z"
+  },
+  "submissionId": 253,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419341da9d8ecc90aac88"
+  },
+  "userId": "698418221da9d8ecc90aa3f4",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int m=matrix.length,n=matrix[0].length;\n\n        boolean row=false,col=false;\n        for(int i=0;i<m;i++) {\n            if(matrix[i][0]==0){\n                row=true;\n                break;\n            }\n        }\n        for(int j=0;j<n;j++){\n            if(matrix[0][j]==0){\n                col=true;\n                break;\n            }\n        }\n\n        for(int i=1;i<m;i++){\n            for(int j=1;j<n;j++){\n                if(matrix[i][j]==0){\n                    matrix[i][0]=0;\n                    matrix[0][j]=0;\n                }\n            }\n        }\n\n        for(int i=1;i<m;i++){\n            for(int j=1;j<n;j++){\n                if(matrix[i][0]==0 || matrix[0][j]==0) matrix[i][j]=0;\n            }\n        }\n\n        if(row){\n            for(int i=0;i<m;i++) {\n                matrix[i][0]=0;\n            }\n        }\n        if(col){\n            for(int i=0;i<n;i++) {\n                matrix[0][i]=0;\n            }\n        }\n        \n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:44.712Z"
+  },
+  "submissionId": 254,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419361da9d8ecc90aac95"
+  },
+  "userId": "698418821da9d8ecc90aa545",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int row = matrix.length;             \n        int coloumn = matrix[0].length;     \n        Set<Integer> rows = new HashSet<>(); \n        Set<Integer> col = new HashSet<>();  \n        for(int i=0;i<row;i++){          \n            for(int j =0;j<coloumn;j++){ \n                if(matrix[i][j]==0){\n                    rows.add(i);            \n                    col.add(j);\n                }\n            }\n        }\n         for(int i=0;i<row;i++){\n            for(int j =0;j<coloumn;j++){\n                if(rows.contains(i) || col.contains(j)){\n                    matrix[i][j]=0;\n                }\n            }\n         }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:46.491Z"
+  },
+  "submissionId": 255,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419371da9d8ecc90aaca7"
+  },
+  "userId": "698418191da9d8ecc90aa3c2",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int m = matrix.length;\n        int n = matrix[0].length;\n        boolean firstRow = false;\n        boolean firstCol = false;\n        for(int j=0;j<n;j++){\n            if(matrix[0][j]==0){\n            firstRow = true;\n            break;\n            }\n        }\n        for(int i=0;i<m;i++){\n            if(matrix[i][0]==0){\n            firstCol = true;\n            break;\n            }\n        }\n        for(int i=1;i<m;i++){\n            for(int j=1;j<n;j++){\n                if(matrix[i][j]==0){\n                    matrix[i][0]=0;\n                    matrix[0][j]=0;\n                }\n            }\n        }\n        for(int i=1;i<m;i++){\n            for(int j=1;j<n;j++){\n                if(matrix[i][0]==0||matrix[0][j]==0){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        if(firstCol){\n            for(int i=0;i<m;i++){\n                matrix[i][0]=0;\n\n            }\n        }\n        if(firstRow){\n            for(int j=0;j<n;j++){\n                matrix[0][j]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:47.282Z"
+  },
+  "submissionId": 256,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419381da9d8ecc90aacb5"
+  },
+  "userId": "698418271da9d8ecc90aa408",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int n=matrix.length;\n        int m=matrix[0].length;\n        boolean[] row=new boolean[n];\n        boolean[] col=new boolean[m];\n        for(int i=0;i<n;i++){\n            for(int j=0;j<m;j++){\n                if(matrix[i][j]==0){\n                    row[i]=true;\n                    col[j]=true;\n                }\n            }\n        }\n        for(int i=0;i<n;i++){\n            for(int j=0;j<m;j++){\n                if(row[i]||col[j]) matrix[i][j]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:48.063Z"
+  },
+  "submissionId": 257,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984193e1da9d8ecc90aacde"
+  },
+  "userId": "698418311da9d8ecc90aa455",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int m=matrix.length;\n        int n=matrix[0].length;\n        boolean rowf[]=new boolean[m];\n        boolean colf[]=new boolean[n];\n        for(int i=0;i<m;i++){\n            for(int j=0;j<n;j++){\n                if(matrix[i][j]==0){\n                    rowf[i]=true;\n                    colf[j]=true;\n                }\n            }\n        }\n        for(int i=0;i<m;i++){\n            if(rowf[i]){\n                for(int j=0;j<n;j++){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        for(int j=0;j<n;j++){\n            if(colf[j]){\n                for(int i=0;i<m;i++){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:54.379Z"
+  },
+  "submissionId": 258,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984193e1da9d8ecc90aace5"
+  },
+  "userId": "6984183b1da9d8ecc90aa48f",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n = height.length, totalWater = 0;\n        int leftMax[] = new int[n];\n        int rightMax[] = new int[n];\n\n        leftMax[0] = height[0];\n        for ( int i = 1; i < n; i += 1 ){\n            leftMax[i] = Math.max(leftMax[i - 1], height[i]);\n        }\n\n        rightMax[n - 1] = height[n - 1];\n        for ( int i = n - 2; i >= 0; i -= 1 ){\n            rightMax[i] = Math.max(rightMax[i + 1], height[i]);\n        }\n\n        for ( int i = 0; i < n; i += 1 ){\n            totalWater += Math.min(leftMax[i], rightMax[i]) - height[i];\n        }\n\n        return totalWater;\n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:54.824Z"
+  },
+  "submissionId": 259,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984193e1da9d8ecc90aace9"
+  },
+  "userId": "698418461da9d8ecc90aa4ca",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int r=matrix.length,c=matrix[0].length,col=1;\n        for(int i=0;i<r;i++){\n            for(int j=0;j<c;j++){\n                if(matrix[i][j]==0){\n                    matrix[i][0]=0;\n                    if(j!=0){\n                        matrix[0][j]=0;\n                    }else{\n                        col=0;\n                    }\n                }\n\n            }\n        }\n        for(int i=1;i<r;i++){\n            for(int j=1;j<c;j++){\n                if(matrix[i][0]==0 || matrix[0][j]==0){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        for(int i=0;i<c;i++){\n            if(matrix[0][0]==0){\n                matrix[0][i]=0;\n            }\n        }\n        for(int i=0;i<r;i++){\n            if(col==0){\n                matrix[i][0]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:54.881Z"
+  },
+  "submissionId": 260,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419411da9d8ecc90aad10"
+  },
+  "userId": "698418281da9d8ecc90aa416",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n       int m=matrix.length;\n        int n=matrix[0].length;\n        int[] row=new int[m];\n        int[] col=new int[n];\n        for(int i=0;i<m;i++)\n        {\n            for(int j=0;j<n;j++)\n            {\n                if(matrix[i][j]==0)\n                {\n                    row[i]++;\n                    col[j]++;\n                }\n            }\n        }\n        for(int i=0;i<m;i++)\n        {\n            for(int j=0;j<n;j++)\n            {\n                if(row[i]!=0||col[j]!=0)\n                {\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:14:57.300Z"
+  },
+  "submissionId": 261,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419441da9d8ecc90aad25"
+  },
+  "userId": "6984181b1da9d8ecc90aa3d1",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int count=0,n=height.length;\n        int l=0,leftmost=height[0];\n        int r=n-1,rightmost=height[n-1];\n        while(l<r){\n        leftmost=Math.max(height[l],leftmost);\n        rightmost=Math.max(height[r],rightmost);\n        if(leftmost<rightmost){\n            count+=leftmost-height[l];\n            l++;\n        }else{\n            count+=rightmost-height[r];\n            r--;\n        }\n        }\n        return count;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:00.253Z"
+  },
+  "submissionId": 262,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419461da9d8ecc90aad44"
+  },
+  "userId": "6984181c1da9d8ecc90aa3d8",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        boolean firstRow=false;\n        boolean firstCol=false;\n        int m=matrix.length;\n        int n=matrix[0].length;\n\n        for(int i=0; i<m; i++) {\n            if(matrix[i][0]==0) {\n                firstCol=true;\n                break;\n            }\n        }\n\n        for(int i=0; i<n; i++) {\n            if(matrix[0][i]==0) {\n                firstRow=true;\n                break;\n            }\n        }\n\n        for(int i=1; i<m; i++) {\n            for(int j=1; j<n; j++) {\n                if(matrix[i][j]==0) {\n                    matrix[i][0]=0;\n                    matrix[0][j]=0;\n                }\n            }\n        }\n\n        for(int i=1; i<m; i++) {\n            for(int j=1; j<n; j++) {\n                if(matrix[i][0]==0 || matrix[0][j]==0) {\n                    matrix[i][j]=0;\n                }\n            }\n        }\n\n        if(firstRow) {\n            for(int i=0; i<n; i++) {\n                matrix[0][i]=0;\n            }\n        }\n\n        if(firstCol) {\n            for(int i=0; i<m; i++) {\n                matrix[i][0]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:02.861Z"
+  },
+  "submissionId": 263,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419481da9d8ecc90aad5a"
+  },
+  "userId": "6984186e1da9d8ecc90aa531",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int r = matrix.length;\n        int c = matrix[0].length;\n\n        boolean fr = false;\n        boolean fc = false;\n\n        for (int j = 0; j < c; j++) {\n            if (matrix[0][j] == 0) {\n                fr = true;\n                break;\n            }\n        }\n\n        for (int i = 0; i < r; i++) {\n            if (matrix[i][0] == 0) {\n                fc = true;\n                break;\n            }\n        }\n        for(int i=0; i<r; i++){\n            for(int j=0; j<c; j++){\n                if(matrix[i][j] == 0){\n                    matrix[0][j] = 0;\n                    matrix[i][0] = 0;\n                }\n            }\n        }\n        for(int i=1; i<r; i++){\n            if(matrix[i][0] == 0){\n                for(int j=0; j<c; j++){\n                    matrix[i][j] = 0;\n                }\n            }\n        }\n        for(int j=1; j<c; j++){\n            if(matrix[0][j] == 0){\n                for(int i=0; i<r; i++){\n                    matrix[i][j] = 0;\n                }\n            }\n        }\n        if (fr) {\n            for (int j = 0; j < c; j++) {\n                matrix[0][j] = 0;\n            }\n        }\n\n        if (fc) {\n            for (int i = 0; i < r; i++) {\n                matrix[i][0] = 0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:04.309Z"
+  },
+  "submissionId": 264,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419481da9d8ecc90aad60"
+  },
+  "userId": "6984188a1da9d8ecc90aa554",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n = height.length;\n        int[] prefixMax = new int[n];\n        int[] suffixMax = new int[n];\n        prefixMax[0] = height[0];\n        for (int i = 1; i < n; i++) {\n            prefixMax[i] = Math.max(prefixMax[i - 1], height[i]);\n        }\n        suffixMax[n - 1] = height[n - 1];\n        for (int i = n - 2; i >= 0; i--) {\n            suffixMax[i] = Math.max(suffixMax[i + 1], height[i]);\n        }\n        int waterTrapped = 0;\n        for (int i = 0; i < n; i++) {\n            waterTrapped += Math.min(prefixMax[i], suffixMax[i]) - height[i];\n        }\n\n        return waterTrapped;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:04.480Z"
+  },
+  "submissionId": 265,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984194a1da9d8ecc90aad7a"
+  },
+  "userId": "698418421da9d8ecc90aa4ad",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "python",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        boolean zeroinFirstCol = false;\n        for (int row = 0; row < matrix.length; row++) {\n            if (matrix[row][0] == 0) zeroinFirstCol = true;\n            for (int col = 1; col < matrix[0].length; col++) {\n                if (matrix[row][col] == 0) {\n                    matrix[row][0] = 0;\n                    matrix[0][col] = 0;\n                }\n            }\n        }\n\n        for (int row = matrix.length - 1; row >= 0; row--) {\n            for (int col = matrix[0].length - 1; col >= 1; col--) {\n                if (matrix[row][0] == 0 || matrix[0][col] == 0) {\n                    matrix[row][col] = 0;\n                }\n            }\n            if (zeroinFirstCol) {\n                matrix[row][0] = 0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:06.484Z"
+  },
+  "submissionId": 266,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984194c1da9d8ecc90aad94"
+  },
+  "userId": "6984181a1da9d8ecc90aa3c6",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        Queue<int[]> que=new LinkedList<>();\n        int row=matrix.length;\n        int col=matrix[0].length;\n        for(int i=0;i<row;i++){\n            for(int j=0;j<col;j++){\n                if(matrix[i][j]==0){\n                    que.add(new int[]{i,j});\n                }\n            }\n        }\n\n        while(!que.isEmpty()){\n            int[] arr=que.poll();\n            int r=arr[0];\n            int c=arr[1];\n            for(int i=r;i<row;i++){\n                matrix[i][c]=0;\n            }\n            for(int i=r;i>=0;i--){\n                matrix[i][c]=0;\n            }\n            for(int i=c;i<col;i++){\n                matrix[r][i]=0;\n            }\n            for(int i=c;i>=0;i--){\n                matrix[r][i]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:08.764Z"
+  },
+  "submissionId": 267,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419501da9d8ecc90aadae"
+  },
+  "userId": "698418561da9d8ecc90aa502",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int R=matrix.length;\n        int C=matrix[0].length;\n        boolean[][] flag=new boolean[R][C];\n        for(int row=0;row<R;row++){\n            for(int col=0;col<C;col++){\n                if(matrix[row][col]==0){\n                    \n                    for(int i=0;i<R;i++){\n                        if(matrix[i][col]!=0) flag[i][col]=true;\n                    }\n                    for(int j=0;j<C;j++){\n                        if(matrix[row][j]!=0) flag[row][j]=true;\n                    }\n                }\n            }\n        }\n        for(int row=0;row<R;row++){\n            for(int col=0;col<C;col++){\n                if(flag[row][col]==true){\n                    matrix[row][col]=0;\n                }\n            }\n        }\n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:12.519Z"
+  },
+  "submissionId": 268,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419501da9d8ecc90aadb4"
+  },
+  "userId": "698418431da9d8ecc90aa4b8",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n=height.length;\n        int rightmax[]=new int[n];\n        int leftmax[]=new int[n];\n        int maxwater=0;\n        leftmax[0]=height[0];\n        for(int i=1;i<n;i++){\n            leftmax[i]=Math.max(leftmax[i-1],height[i]);\n        }\n        rightmax[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            rightmax[i]=Math.max(rightmax[i+1],height[i]);\n        }\n        for(int i=0;i<n;i++){\n            maxwater+=(Math.min(leftmax[i],rightmax[i])-height[i]);\n        }\n        return maxwater;\n    }\n}}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:12.760Z"
+  },
+  "submissionId": 269,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419531da9d8ecc90aadc8"
+  },
+  "userId": "698418291da9d8ecc90aa421",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int left=0;\n        while(left<height.length && height[left]==0){\n            left++;\n        }\n        int right=height.length-1;\n        while(right>-1 && height[right]==0){\n            right--;\n        }\n        int ptr=0;\n        int ptr2=0;\n        int sum=0;\n        int direction=0;\n        while(left<right){\n            if(height[left]<=height[right]){\n                ptr=left;\n                ptr2=left;\n                direction=0;\n                boolean flag=true;\n                while(ptr2<=right && (height[ptr2]<height[left] || flag)){\n                    ptr2++;\n                    flag=false;\n                }\n                // System.out.println(\"DIRECTION: 0 left: \"+left+\" ptr: \"+ptr+\" ptr2: \"+ptr2);\n            }\n            else{\n                ptr=right;\n                ptr2=right;\n                direction=1;\n                boolean flag=true;\n                while(ptr2>=left && (height[ptr2]<height[right] || flag)){\n                    ptr2--;\n                    flag=false;\n                }\n                // System.out.println(\"DIRECTION: 1 right: \"+right+\" ptr: \"+ptr+\" ptr2: \"+ptr2);\n            }\n            if(direction==0){\n                while(ptr<ptr2){\n                    sum+=Math.min(height[left],height[ptr2])-height[ptr];\n                    ptr++;\n                }\n                left=ptr2;\n            }\n            else{\n                while(ptr>ptr2){\n                    sum+=Math.min(height[right],height[ptr2])-height[ptr];\n                    ptr--;\n                }\n                right=ptr2;\n            }\n            // System.out.println(\"sum :\"+sum);\n\n        }\n        return sum;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:15.168Z"
+  },
+  "submissionId": 270,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419531da9d8ecc90aadd4"
+  },
+  "userId": "698418371da9d8ecc90aa481",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        // TODO: Implement solution\nclass Solution {\n    public void setZeroes(int[][] matrix) {\n        Stack<Integer> stki=new Stack<>();\n        Stack<Integer> stkj=new Stack<>();\n     \n    for(int i=0;i<matrix.length;i++){\n        for(int j=0;j<matrix[0].length;j++){\n            \n            if(matrix[i][j]==0){//i=1,j=1;//i==0,j==0,i==0,j==3\n            stki.add(i);//0,0\n            stkj.add(j);//0,3\n//i=0\n            }\n        }\n    }\n    while(!stki.isEmpty())\n    {\n           int noi= stki.pop();//0\n           for(int i=0;i<matrix.length;i++)\n           {\n            for(int j=0;j<matrix[0].length;j++){\n            \n            if(i==noi){\n                matrix[i][j]=0;\n            }\n           }\n           }\n    }\n        while(!stkj.isEmpty())\n    {\n           int noj= stkj.pop();//1\n           for(int i=0;i<matrix.length;i++)\n           {\n              for(int j=0;j<matrix[0].length;j++){\n            if(j==noj){\n                matrix[i][j]=0;\n            }\n           }\n    }\n    }\n\n\n    \n        \n    }\n}\n        return null;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:15.954Z"
+  },
+  "submissionId": 271,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419561da9d8ecc90aade7"
+  },
+  "userId": "698418131da9d8ecc90aa3b8",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n = height.length;\n        int[] lmax =new int[n];\n        int[] rmax =new int[n];\n        lmax[0]=height[0];\n        rmax[n-1]=height[n-1];\n        for(int i=1;i<n;i++){\n            lmax[i]=Math.max(lmax[i-1],height[i]);\n        }\n        for(int j=n-2;j>-1;j--){\n            rmax[j]=Math.max(rmax[j+1],height[j]);\n        }\n        int capacity=0;\n        for(int i=0;i<n;i++){\n            capacity+=Math.min(lmax[i],rmax[i])-height[i];\n        }\n        return capacity;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:18.486Z"
+  },
+  "submissionId": 272,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419621da9d8ecc90aadfc"
+  },
+  "userId": "6984184c1da9d8ecc90aa4e6",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int rows = matrix.length;\n        int cols = matrix[0].length;\n\n        boolean firstRowHasZero = false;\n        boolean firstColHasZero = false;\n\n        // Check if the first row contains zero\n        for (int c = 0; c < cols; c++) {\n            if (matrix[0][c] == 0) {\n                firstRowHasZero = true;\n                break;\n            }\n        }\n\n        // Check if the first column contains zero\n        for (int r = 0; r < rows; r++) {\n            if (matrix[r][0] == 0) {\n                firstColHasZero = true;\n                break;\n            }\n        }\n\n        // Use the first row and column as markers\n        for (int r = 1; r < rows; r++) {\n            for (int c = 1; c < cols; c++) {\n                if (matrix[r][c] == 0) {\n                    matrix[r][0] = 0;\n                    matrix[0][c] = 0;\n                }\n            }\n        }\n\n        // Set the marked rows to zero\n        for (int r = 1; r < rows; r++) {\n            if (matrix[r][0] == 0) {\n                for (int c = 1; c < cols; c++) {\n                    matrix[r][c] = 0;\n                }\n            }\n        }\n\n        // Set the marked columns to zero\n        for (int c = 1; c < cols; c++) {\n            if (matrix[0][c] == 0) {\n                for (int r = 1; r < rows; r++) {\n                    matrix[r][c] = 0;\n                }\n            }\n        }\n\n        // Set the first row to zero if needed\n        if (firstRowHasZero) {\n            for (int c = 0; c < cols; c++) {\n                matrix[0][c] = 0;\n            }\n        }\n\n        // Set the first column to zero if needed\n        if (firstColHasZero) {\n            for (int r = 0; r < rows; r++) {\n                matrix[r][0] = 0;\n            }\n        }        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:30.332Z"
+  },
+  "submissionId": 273,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419651da9d8ecc90aae04"
+  },
+  "userId": "698418271da9d8ecc90aa408",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int sum=0;\n        int[] leftmax=new int[height.length];\n        int[] rightmax=new int[height.length];\n        leftmax[0]=height[0];\n        rightmax[height.length-1]=height[height.length-1];\n        for(int i=1;i<height.length;i++){\n            leftmax[i]=Math.max(height[i],leftmax[i-1]);\n        }\n        for(int i=height.length-2;i>=0;i--){\n            rightmax[i]=Math.max(height[i],rightmax[i+1]);\n        }\n        for(int k=0;k<height.length;k++){\n            sum+=Math.min(leftmax[k],rightmax[k])-height[k];\n        }\n        return sum;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:33.804Z"
+  },
+  "submissionId": 274,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419711da9d8ecc90aae3e"
+  },
+  "userId": "6984181e1da9d8ecc90aa3e4",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int l=height.length;\n        int max=0;\n        int left[]=new int [l];\n        int right[]=new int[l];\n        left[0]=height[0];\n        for(int i=1;i<l;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        right[l-1]=height[l-1];\n        for(int j=l-2;j>=0;j--){\n            right[j]=Math.max(right[j+1],height[j]);\n        }\n        for(int i=0;i<l;i++){\n            max+=(right[i]>left[i])?left[i]-height[i]:right[i]-height[i];\n        }\n        return max;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:45.635Z"
+  },
+  "submissionId": 275,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419731da9d8ecc90aae45"
+  },
+  "userId": "698418361da9d8ecc90aa474",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "c",
+  "code": "void setZeroes(int** matrix, int matrixSize, int* matrixColSize) {\n   int c=matrixColSize[0];\n   int ex[matrixSize][c];\n   for(int i=0;i<matrixSize;i++){\n    for(int j=0;j<matrixColSize[i];j++){\n        ex[i][j]=matrix[i][j];\n    }\n   }\n   for(int i=0;i<matrixSize;i++){\n    for(int j=0;j<matrixColSize[i];j++){\n        if(ex[i][j]==0){\n            for(int k=0;k<matrixColSize[i];k++){\n                matrix[i][k]=0;\n            }\n            for(int k=0;k<matrixSize;k++){\n                matrix[k][j]=0;\n            }\n        }\n    }\n   }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:47.076Z"
+  },
+  "submissionId": 276,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419731da9d8ecc90aae4b"
+  },
+  "userId": "698418651da9d8ecc90aa520",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int n=matrix.length;\n        int m=matrix[0].length;\n        boolean rowzero=false;\n        boolean colzero=false;\n        for(int col=0;col<m;col++){\n            if(matrix[0][col]==0){\n                rowzero=true;\n            }\n        }\n        for(int row=0;row<n;row++){\n            if(matrix[row][0]==0){\n                colzero=true;\n            }\n        }\n        for(int i=1;i<n;i++){\n            for(int j=1;j<m;j++){\n                if(matrix[i][j]==0){\n                    matrix[0][j]=0;\n                    matrix[i][0]=0;\n                }\n            }\n        }\n        for(int i=1;i<n;i++){\n            if(matrix[i][0]==0){\n                for(int j=1;j<m;j++){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        for(int j=1;j<m;j++){\n            if(matrix[0][j]==0){\n                for(int i=1;i<n;i++){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        if(rowzero){\n            for(int col=0;col<m;col++){\n                matrix[0][col]=0;\n            }\n        }\n        if(colzero){\n            for(int row=0;row<n;row++){\n                matrix[row][0]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:15:47.913Z"
+  },
+  "submissionId": 277,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419841da9d8ecc90aae68"
+  },
+  "userId": "6984183b1da9d8ecc90aa48f",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "python",
+  "code": "class Solution:\n    def setZeroes(self, matrix: List[List[int]]) -> None:\n        \"\"\"\n        Do not return anything, modify matrix in-place instead.\n        \"\"\"\n        def row(arr, rows):\n            for j in range(len(arr[0])):\n                if arr[rows][j] != 0:\n                    arr[rows][j] = -111\n\n        def col(arr, cols):\n            for i in range(len(arr)):\n                if arr[i][cols] != 0:\n                    arr[i][cols] = -111\n\n        for i in range(len(matrix)):\n            for j in range(len(matrix[0])):\n                if matrix[i][j] == 0:\n                    row(matrix, i)\n                    col(matrix, j)\n        \n        for i in range(len(matrix)):\n            for j in range(len(matrix[0])):\n                if matrix[i][j] == -111:\n                    matrix[i][j] = 0",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:16:04.033Z"
+  },
+  "submissionId": 278,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6984198e1da9d8ecc90aae96"
+  },
+  "userId": "698418aa1da9d8ecc90aa733",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int m=matrix.length;\n        int n=matrix[0].length;\n        int row[]=new int[m];\n        int col[]=new int[n];\n        for(int i=0;i<m;i++)\n            for(int j=0;j<n;j++)\n                if(matrix[i][j]==0){\n                    row[i]=1;\n                    col[j]=1;\n                }\n        \n        for(int i=0;i<m;i++){\n            for(int j=0;j<n;j++){\n                if(row[i]==1 || col[j]==1) matrix[i][j]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:16:14.825Z"
+  },
+  "submissionId": 279,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419ab1da9d8ecc90aaf4f"
+  },
+  "userId": "698418261da9d8ecc90aa403",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int m=matrix.length;\n        int n =matrix[0].length;\n        int row[]=new int[m];\n        int column[]= new int[n];\n        for(int i=0;i<m;i++){\n            for(int j=0;j<n; j++){\n                if(matrix[i][j]==0){\n                    row[i]=1;\n                    column[j]= 1;\n                }\n            }\n        }\n        for(int i=0;i<m;i++){\n            if(row[i] == 1){\n                for(int j=0; j<n; j++){\n                    matrix[i][j] = 0;\n                }\n            }\n        }\n        for(int j=0;j<n;j++){\n            if(column[j]==1){\n                for(int i=0;i<m; i++){\n                    matrix[i][j]= 0;\n                }\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:16:43.081Z"
+  },
+  "submissionId": 280,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419b21da9d8ecc90aafd5"
+  },
+  "userId": "698418131da9d8ecc90aa3b8",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int r=matrix.length;\n        int c=matrix[0].length;\n        int rflag=0,cflag=0;\n        for(int i=0;i<r;i++){\n            if(matrix[i][0]==0) cflag=1;\n        }\n        for(int i=0;i<c;i++){\n            if(matrix[0][i]==0) rflag=1;\n        }\n        for(int i=1;i<r;i++){\n            for(int j=1;j<c;j++){\n                if(matrix[i][j]==0){\n                    matrix[i][0]=0;\n                    matrix[0][j]=0;\n                }\n            }\n        }\n        for(int i=1;i<r;i++){\n            for(int j=1;j<c;j++){\n                if(matrix[i][0]==0 || matrix[0][j]==0){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        if(rflag==1){\n            for(int i=0;i<c;i++) matrix[0][i]=0;\n        }\n        if(cflag==1){\n            for(int i=0;i<r;i++) matrix[i][0]=0;\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:16:50.447Z"
+  },
+  "submissionId": 281,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419b21da9d8ecc90aafd9"
+  },
+  "userId": "698418851da9d8ecc90aa54e",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n=height.length;\n        int left[]=new int[n];\n        int right[]=new int[n];\n        int totalarea=0;\n        left[0]=height[0];\n        right[n-1]=height[n-1];\n        for(int i=1;i<n;i++){\n            left[i]=Math.max(left[i-1],height[i]);\n        }\n        for(int i=n-2;i>-1;i--){\n            right[i]=Math.max(right[i+1],height[i]);\n        }\n        for(int cur=0;cur<n;cur++){\n            totalarea+=Math.min(left[cur],right[cur])-height[cur];\n        }\n        return totalarea;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:16:50.503Z"
+  },
+  "submissionId": 282,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419cb1da9d8ecc90ab088"
+  },
+  "userId": "6984181e1da9d8ecc90aa3e4",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int n=matrix.length;\n        int m=matrix[0].length;\n        Set<Integer> row=new HashSet<>();\n        Set<Integer> col=new HashSet<>();\n        for(int i=0;i<n;i++){\n            for(int j=0;j<m;j++){\n                if(matrix[i][j]==0){\n                    row.add(i);\n                    col.add(j);\n                }\n            }\n        }\n       \n        for(int i=0;i<n;i++){\n            \n            for(int j=0;j<m;j++){\n                if(row.contains(i)||col.contains(j)){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        for(int i=0;i<n;i++){\n            System.out.print(\"[\");\n            for(int j=0;j<m;j++){\n                System.out.print(matrix[i][j]);\n                if(j!=m-1)\n                System.out.print(\",\");\n            }\n            System.out.print(\"]\");\n        }System.out.print(\"]\");\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:17:15.735Z"
+  },
+  "submissionId": 283,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419d81da9d8ecc90ab09e"
+  },
+  "userId": "698418411da9d8ecc90aa4a7",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        boolean zeroinFirstCol = false;\n        for (int row = 0; row < matrix.length; row++) {\n            if (matrix[row][0] == 0) zeroinFirstCol = true;\n            for (int col = 1; col < matrix[0].length; col++) {\n                if (matrix[row][col] == 0) {\n                    matrix[row][0] = 0;\n                    matrix[0][col] = 0;\n                }\n            }\n        }\n\n        for (int row = matrix.length - 1; row >= 0; row--) {\n            for (int col = matrix[0].length - 1; col >= 1; col--) {\n                if (matrix[row][0] == 0 || matrix[0][col] == 0) {\n                    matrix[row][col] = 0;\n                }\n            }\n            if (zeroinFirstCol) {\n                matrix[row][0] = 0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:17:28.192Z"
+  },
+  "submissionId": 284,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419d91da9d8ecc90ab0aa"
+  },
+  "userId": "698419011da9d8ecc90aaa95",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        int row=matrix.length;\n        int col=matrix[0].length;\n        boolean[] r=new boolean[row];\n        boolean[] c=new boolean[col];\n        for(int i=0;i<row;i++){\n            for(int j=0;j<col;j++){\n                if(matrix[i][j]==0){\n                    r[i]=true;\n                    c[j]=true;\n                }\n            }\n        }\n        for(int i=0;i<row;i++){\n            for(int j=0;j<col;j++){\n                if(r[i]==true || c[j]==true){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:17:29.972Z"
+  },
+  "submissionId": 285,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419de1da9d8ecc90ab0c4"
+  },
+  "userId": "698418371da9d8ecc90aa481",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        \n         if (height == null || height.length == 0) {\n            return 0;\n        }\n\n        int n = height.length;\n        int[] left_max = new int[n];\n        int[] right_max = new int[n];\n\n \n        left_max[0] = height[0];\n        for (int i = 1; i < n; i++) {\n            left_max[i] = Math.max(left_max[i - 1], height[i]);\n        }\n\n    \n        right_max[n - 1] = height[n - 1];\n        for (int i = n - 2; i >= 0; i--) {\n            right_max[i] = Math.max(right_max[i + 1], height[i]);\n        }\n\n       \n        int totalWater = 0;\n        for (int i = 0; i < n; i++) {\n    \n            totalWater += Math.min(left_max[i], right_max[i]) - height[i];\n        }\n\n        return totalWater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:17:34.416Z"
+  },
+  "submissionId": 286,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419e61da9d8ecc90ab127"
+  },
+  "userId": "6984184a1da9d8ecc90aa4db",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        // TODO: Implement solution\n        class Solution {\n    public int trap(int[] height) {\n        int maxCapacity = 0;\n        int heightLength=height.length;\n        int[] leftMax=new int[heightLength];\n        int[] rightMax=new int[heightLength];\n        leftMax[0]=height[0];\n        rightMax[heightLength-1]=height[heightLength-1];\n        for(int i=1;i<heightLength;i++){\n            leftMax[i]=Math.max(leftMax[i-1],height[i]);\n        }\n        for(int i=heightLength-2;i>=0;i--){\n            rightMax[i]=Math.max(rightMax[i+1],height[i]);\n        }\n        for(int i=0;i<heightLength;i++){\n            maxCapacity+=(Math.min(leftMax[i],rightMax[i])-height[i]);\n        }\n        return maxCapacity;\n    }\n}\n        return null;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:17:42.902Z"
+  },
+  "submissionId": 287,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698419ec1da9d8ecc90ab1f4"
+  },
+  "userId": "698418e21da9d8ecc90aa9cf",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int left = 0, right = height.length - 1;\n        int leftMax = 0, rightMax = 0, maxWater = 0;\n        while (left < right) {\n            if (height[left] < height[right]) {\n                if (height[left] >= leftMax) {\n                    leftMax = height[left]; \n                } else {\n                    maxWater += leftMax - height[left];\n                }\n                left++;\n            } else {\n                if (height[right] >= rightMax) {\n                    rightMax = height[right]; \n                } else {\n                    maxWater += rightMax - height[right];\n                }\n                right--;\n            }\n        }\n        return maxWater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:17:48.430Z"
+  },
+  "submissionId": 288,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a141da9d8ecc90ab6c7"
+  },
+  "userId": "698418161da9d8ecc90aa3bc",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\npublic void setZeroes(int[][] matrix) {\n         int R=matrix.length;\n        int C=matrix[0].length;\n        boolean[] ROW=new boolean[R];\n        boolean[] COL=new boolean[C];\n        for(int i=0;i<R;i++){\n            for(int j=0;j<C;j++){\n                if(matrix[i][j]==0){\n                    ROW[i]=true;\n                    COL[j]=true;\n                   }\n            }\n        }\n        for(int i=0;i<R;i++){\n            for(int j=0;j<C;j++){\n                if(ROW[i]==true || COL[j]==true){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n       \n       \n\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:18:28.956Z"
+  },
+  "submissionId": 289,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a151da9d8ecc90ab6ce"
+  },
+  "userId": "698419011da9d8ecc90aaa95",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int n=height.length;\n        int maxwater=0;\n        int leftMax[]=new int[n],rightMax[] =new int[n];\n        leftMax[0]=height[0];\n        for(int i=1;i<n;i++){\n            leftMax[i]=Math.max(leftMax[i-1],height[i]);\n        }\n        rightMax[n-1]=height[n-1];\n        for(int i=n-2;i>=0;i--){\n            rightMax[i]=Math.max(rightMax[i+1],height[i]);\n        }\n      for(int i=0;i<n;i++){\n        maxwater+=Math.min(leftMax[i],rightMax[i])-height[i];\n      }\n      return maxwater;\n\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:18:29.208Z"
+  },
+  "submissionId": 290,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a171da9d8ecc90ab6f3"
+  },
+  "userId": "698418561da9d8ecc90aa502",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "python",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int maxWater=0,n=height.length;\n        int leftmax[]=new int[n];\n        int rightmax[]=new int[n];\n        int maxLen=0;\n        leftmax[0]=height[0];\n        for(int i=1;i<n;i++){\n            leftmax[i]=Math.max(leftmax[i-1],height[i]);\n        }\n        rightmax[n-1]=height[n-1];\n        for(int j=n-2;j>=0;j--){\n            rightmax[j]=Math.max(rightmax[j+1],height[j]);\n        }\n        for(int i=0;i<n;i++){\n            maxWater+=(Math.min(leftmax[i],rightmax[i])-height[i]);\n        }\n\nreturn maxWater;\n\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:18:31.418Z"
+  },
+  "submissionId": 291,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a1e1da9d8ecc90ab77e"
+  },
+  "userId": "698418e21da9d8ecc90aa9cf",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "public class Solution {\n    public void setZeroes(int[][] matrix) {\n        int m = matrix.length;\n        int n = matrix[0].length;\n\n        boolean firstRowZero = false;\n        boolean firstColZero = false;\n\n        // Check if first column has any zeros\n        for (int i = 0; i < m; i++) {\n            if (matrix[i][0] == 0) {\n                firstColZero = true;\n                break;\n            }\n        }\n\n        // Check if first row has any zeros\n        for (int j = 0; j < n; j++) {\n            if (matrix[0][j] == 0) {\n                firstRowZero = true;\n                break;\n            }\n        }\n\n        // Use first row and column to mark zeros\n        for (int i = 1; i < m; i++) {\n            for (int j = 1; j < n; j++) {\n                if (matrix[i][j] == 0) {\n                    matrix[i][0] = 0;\n                    matrix[0][j] = 0;\n                }\n            }\n        }\n\n        // Set elements to 0 based on markers in first row and column\n        for (int i = 1; i < m; i++) {\n            for (int j = 1; j < n; j++) {\n                if (matrix[i][0] == 0 || matrix[0][j] == 0) {\n                    matrix[i][j] = 0;\n                }\n            }\n        }\n\n        // Set first row to 0 if needed\n        if (firstRowZero) {\n            for (int j = 0; j < n; j++) {\n                matrix[0][j] = 0;\n            }\n        }\n\n        // Set first column to 0 if needed\n        if (firstColZero) {\n            for (int i = 0; i < m; i++) {\n                matrix[i][0] = 0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:18:38.597Z"
+  },
+  "submissionId": 292,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a201da9d8ecc90ab7f8"
+  },
+  "userId": "698419b21da9d8ecc90aafde",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] arr) {\n        int n=arr.length;\n        int lmax[]=new int[n];\n        int rmax[]=new int[n];\n        lmax[0]=arr[0];\n        rmax[n-1]=arr[n-1];\n        for(int i=1;i<n;i++)\n            lmax[i]=Math.max(lmax[i-1],arr[i]);\n        for(int i=n-2;i>=0;i--)\n            rmax[i]=Math.max(rmax[i+1],arr[i]);\n        int res=0;\n        for(int i=0;i<n;i++)\n            res+=Math.min(lmax[i],rmax[i])-arr[i];\n        return res;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:18:40.587Z"
+  },
+  "submissionId": 293,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a221da9d8ecc90ab804"
+  },
+  "userId": "698418561da9d8ecc90aa502",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int maxWater=0,n=height.length;\n        int leftmax[]=new int[n];\n        int rightmax[]=new int[n];\n        int maxLen=0;\n        leftmax[0]=height[0];\n        for(int i=1;i<n;i++){\n            leftmax[i]=Math.max(leftmax[i-1],height[i]);\n        }\n        rightmax[n-1]=height[n-1];\n        for(int j=n-2;j>=0;j--){\n            rightmax[j]=Math.max(rightmax[j+1],height[j]);\n        }\n        for(int i=0;i<n;i++){\n            maxWater+=(Math.min(leftmax[i],rightmax[i])-height[i]);\n        }\n\nreturn maxWater;\n\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:18:42.185Z"
+  },
+  "submissionId": 294,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a271da9d8ecc90ab82c"
+  },
+  "userId": "6984184a1da9d8ecc90aa4db",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        // TODO: Implement solution\n        class Solution {\n    public void setZeroes(int[][] matrix) {\n        int M = matrix.length;\n        int N = matrix[0].length;\n        boolean[][] isZero = new boolean[M][N];\n        for(int row=0; row<M; row++){\n            for(int col=0; col<N; col++){\n                if(matrix[row][col]==0) isZero[row][col]=true;\n            }\n        }\n        for(int row=0; row<M; row++){\n            for(int col=0; col<N; col++){\n                if(isZero[row][col]==true){\n                    int tR = 0;\n                    int tC = 0;\n                    for(;tR<M; tR++){\n                        matrix[tR][col]=0;\n                    }\n                    for(;tC<N; tC++){\n                        matrix[row][tC]=0;\n                    }\n                }\n            }\n        }\n    }\n}\n        return null;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:18:47.628Z"
+  },
+  "submissionId": 295,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a3d1da9d8ecc90ab96c"
+  },
+  "userId": "6984181c1da9d8ecc90aa3d8",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int left=0,right=height.length-1;\n        int leftMax=0,rightMax=0,total=0;\n        while(left<right){\n            leftMax=Math.max(leftMax,height[left]);\n            rightMax=Math.max(rightMax,height[right]);\n            if(leftMax<rightMax){\n                total+=(leftMax-height[left]);\n                left++;\n            }else{\n                total+=(rightMax-height[right]);\n                right--;\n            }\n        }\n        return total;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:19:09.102Z"
+  },
+  "submissionId": 296,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a421da9d8ecc90ab980"
+  },
+  "userId": "6984196a1da9d8ecc90aae24",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "python",
+  "code": "class Solution(object):\n    def setZeroes(self, matrix):\n        zeroinFirstCol = False\n        for row in range(len(matrix)):\n            if matrix[row][0] == 0:\n                zeroinFirstCol = True\n            for col in range(1, len(matrix[0])):\n                if matrix[row][col] == 0:\n                    matrix[row][0] = 0\n                    matrix[0][col] = 0\n\n        for row in range(len(matrix) - 1, -1, -1):\n            for col in range(len(matrix[0]) - 1, 0, -1):\n                if matrix[row][0] == 0 or matrix[0][col] == 0:\n                    matrix[row][col] = 0\n            if zeroinFirstCol:\n                matrix[row][0] = 0",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:19:14.782Z"
+  },
+  "submissionId": 297,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a641da9d8ecc90ab9ca"
+  },
+  "userId": "6984196a1da9d8ecc90aae24",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "python",
+  "code": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        vol = 0  \n        l, r = 0, len(height) - 1  \n        lmax, rmax = 0, height[r]  \n        \n        while l < r:\n            if height[l] <= height[r]:\n                if height[l] < lmax:\n                    vol += lmax - height[l] \n                else:\n                    lmax = height[l]  \n                l += 1  \n            else:\n                if height[r] < rmax:\n                    vol += rmax - height[r]  \n                else:\n                    rmax = height[r]  \n                r -= 1  \n        return vol",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:19:48.289Z"
+  },
+  "submissionId": 298,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a6c1da9d8ecc90ab9d6"
+  },
+  "userId": "6984190e1da9d8ecc90aab03",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "python",
+  "code": "class Solution:\n    def setZeroes(self, matrix: List[List[int]]) -> None:\n        \"\"\"\n        Do not return anything, modify matrix in-place instead.\n        \"\"\"\n        zeros=[]\n        for i in range(len(matrix)):\n            for j in range(len(matrix[0])):\n                if matrix[i][j]==0:\n                    zeros.append((i,j))\n        for x,y in zeros:\n            for j in range(len(matrix[0])):\n                matrix[x][j] = 0\n            for i in range(len(matrix)):\n                matrix[i][y]=0",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:19:56.960Z"
+  },
+  "submissionId": 299,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a6e1da9d8ecc90ab9dc"
+  },
+  "userId": "698418701da9d8ecc90aa535",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int r = mat.length;\n        int c = mat[0].length;\n        boolean col = false;\n        for(int i=0;i<r;i++){\n            if(mat[i][0] == 0) \n                col = true;\n            for(int j=1;j<c;j++){\n                if(mat[i][j] == 0){\n                    mat[i][0] = 0;\n                    mat[0][j] = 0;\n                }\n            }\n        }\n        for(int i=r-1;i>=0;i--){\n            for(int j=c-1;j>=1;j--){\n                if(mat[i][0] == 0 || mat[0][j] == 0)\n                    mat[i][j] = 0;\n            }\n            if(col)\n                mat[i][0] = 0;\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:19:58.947Z"
+  },
+  "submissionId": 300,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a751da9d8ecc90aba4f"
+  },
+  "userId": "698418701da9d8ecc90aa535",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int r = mat.length;\n        int c = mat[0].length;\n        boolean col = false;\n        for(int i=0;i<r;i++){\n            if(mat[i][0] == 0) \n                col = true;\n            for(int j=1;j<c;j++){\n                if(mat[i][j] == 0){\n                    mat[i][0] = 0;\n                    mat[0][j] = 0;\n                }\n            }\n        }\n        for(int i=r-1;i>=0;i--){\n            for(int j=c-1;j>=1;j--){\n                if(mat[i][0] == 0 || mat[0][j] == 0)\n                    mat[i][j] = 0;\n            }\n            if(col)\n                mat[i][0] = 0;\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:20:05.810Z"
+  },
+  "submissionId": 301,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a771da9d8ecc90aba5e"
+  },
+  "userId": "698418701da9d8ecc90aa535",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int r = mat.length;\n        int c = mat[0].length;\n        boolean col = false;\n        for(int i=0;i<r;i++){\n            if(mat[i][0] == 0) \n                col = true;\n            for(int j=1;j<c;j++){\n                if(mat[i][j] == 0){\n                    mat[i][0] = 0;\n                    mat[0][j] = 0;\n                }\n            }\n        }\n        for(int i=r-1;i>=0;i--){\n            for(int j=c-1;j>=1;j--){\n                if(mat[i][0] == 0 || mat[0][j] == 0)\n                    mat[i][j] = 0;\n            }\n            if(col)\n                mat[i][0] = 0;\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:20:07.520Z"
+  },
+  "submissionId": 302,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a791da9d8ecc90aba7d"
+  },
+  "userId": "698418701da9d8ecc90aa535",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public Object solution(Object input) {\n        int r = mat.length;\n        int c = mat[0].length;\n        boolean col = false;\n        for(int i=0;i<r;i++){\n            if(mat[i][0] == 0) \n                col = true;\n            for(int j=1;j<c;j++){\n                if(mat[i][j] == 0){\n                    mat[i][0] = 0;\n                    mat[0][j] = 0;\n                }\n            }\n        }\n        for(int i=r-1;i>=0;i--){\n            for(int j=c-1;j>=1;j--){\n                if(mat[i][0] == 0 || mat[0][j] == 0)\n                    mat[i][j] = 0;\n            }\n            if(col)\n                mat[i][0] = 0;\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:20:09.100Z"
+  },
+  "submissionId": 303,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a8f1da9d8ecc90abbb7"
+  },
+  "userId": "6984190e1da9d8ecc90aab03",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "python",
+  "code": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        res=0\n        maxright=height[::]\n        maxleft=height[::]\n        n=len(height)\n        maxleft[0]=height[0]\n        for i in range(1,n):\n            maxleft[i]=max(maxleft[i],maxleft[i-1])\n        for i in range(n-2,0,-1):\n            maxright[i]=max(maxright[i],maxright[i+1])\n        \n\n        for h in range(n):\n            tall=min(maxleft[h],maxright[h])-height[h]\n            if tall>0:\n                res+=tall\n            else:\n                res+=0\n\n        return res",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:20:31.832Z"
+  },
+  "submissionId": 304,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a941da9d8ecc90abbbd"
+  },
+  "userId": "6984190e1da9d8ecc90aab03",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "python",
+  "code": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        res=0\n        maxright=height[::]\n        maxleft=height[::]\n        n=len(height)\n        maxleft[0]=height[0]\n        for i in range(1,n):\n            maxleft[i]=max(maxleft[i],maxleft[i-1])\n        for i in range(n-2,0,-1):\n            maxright[i]=max(maxright[i],maxright[i+1])\n        \n\n        for h in range(n):\n            tall=min(maxleft[h],maxright[h])-height[h]\n            if tall>0:\n                res+=tall\n            else:\n                res+=0\n\n        return res",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:20:36.368Z"
+  },
+  "submissionId": 305,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841a971da9d8ecc90abbc5"
+  },
+  "userId": "6984190e1da9d8ecc90aab03",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "python",
+  "code": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        res=0\n        maxright=height[::]\n        maxleft=height[::]\n        n=len(height)\n        maxleft[0]=height[0]\n        for i in range(1,n):\n            maxleft[i]=max(maxleft[i],maxleft[i-1])\n        for i in range(n-2,0,-1):\n            maxright[i]=max(maxright[i],maxright[i+1])\n        \n\n        for h in range(n):\n            tall=min(maxleft[h],maxright[h])-height[h]\n            if tall>0:\n                res+=tall\n            else:\n                res+=0\n\n        return res",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:20:39.198Z"
+  },
+  "submissionId": 306,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841aa51da9d8ecc90abc1b"
+  },
+  "userId": "698418271da9d8ecc90aa408",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    private static int lev;\n    private static int max;\n    public int findBottomLeftValue(TreeNode root) {\n        lev=0;\n        max=root.val;\n        dfs(root,0);\n        return max;\n    }\n    private static void dfs(TreeNode root,int l){\n        if(root.left!=null){\n            if(lev<l+1){\n                lev=l+1;\n                max=root.left.val;\n            }\n            dfs(root.left,l+1);\n        }\n        if(root.right!=null){\n            if(lev<l+1){\n                lev=l+1;\n                max=root.right.val;\n            }\n            dfs(root.right,l+1);\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:20:53.500Z"
+  },
+  "submissionId": 307,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841acd1da9d8ecc90abc6b"
+  },
+  "userId": "6984181c1da9d8ecc90aa3d8",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "cpp",
+  "code": "class Solution {\npublic:\n    int maxDepth=-1;\n    int ans=0;\n\n    void dfs(TreeNode* root, int depth) {\n        if(!root) return;\n\n        if(depth>maxDepth) {\n            maxDepth=depth;\n            ans=root->val;\n        }\n\n        dfs(root->left,depth+1);\n        dfs(root->right,depth+1);\n    }\n\n    int findBottomLeftValue(TreeNode* root) {\n        dfs(root,0);\n        return ans;\n    }\n};",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:21:33.870Z"
+  },
+  "submissionId": 308,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841ad81da9d8ecc90abc79"
+  },
+  "userId": "698418261da9d8ecc90aa3fe",
+  "problemId": "698234bd2fd0434e56a60ced",
+  "problemTitle": "Trapping Rain Water",
+  "language": "java",
+  "code": "class Solution {\n    public int trap(int[] height) {\n        int len=height.length;\n        int[] leftmax=new int[len];\n        int[] rightmax=new int[len];\n        int maxwater=0;\n        leftmax[0]=height[0];\n        rightmax[len-1]=height[len-1];\n        for(int i=1;i<len;i++){\n            leftmax[i]=Math.max(leftmax[i-1],height[i]);\n        }  \n        for(int i=len-2;i>=0;i--){\n            rightmax[i]=Math.max(rightmax[i+1],height[i]);\n        }\n        for(int i=0;i<len;i++){\n            maxwater+=(Math.min(leftmax[i],rightmax[i])-height[i]);\n        }\n        return maxwater;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:21:44.323Z"
+  },
+  "submissionId": 309,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841ada1da9d8ecc90abc7f"
+  },
+  "userId": "698418461da9d8ecc90aa4ca",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        int res=0;\n        Queue<TreeNode> qu=new LinkedList<>();\n        qu.add(root);\n        while(!qu.isEmpty()){\n            int siz=qu.size();\n            boolean vst=false;\n            int val=0;\n            for(int i=0;i<siz;i++){\n                TreeNode cur=qu.poll();\n                if(!vst){\n                    val=cur.val;\n                    vst=true;\n                }\n                if(cur.left!=null) qu.add(cur.left);\n                if(cur.right!=null) qu.add(cur.right);\n            }\n            res=val;\n        }\n        return res;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:21:46.871Z"
+  },
+  "submissionId": 310,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841ae11da9d8ecc90abc95"
+  },
+  "userId": "6984190e1da9d8ecc90aab03",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "python",
+  "code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:\n        mp={}\n        queue=collections.deque()\n        queue.append((root,0))\n        while queue:\n            node,idx=queue.popleft()\n            if idx not in mp:\n                mp[idx]=node.val\n            if node.left:\n                queue.append((node.left,idx+1))\n            if node.right:\n                queue.append((node.right,idx+1))\n        lastkey=list(mp.keys())[-1]\n        return mp[lastkey]\n        # return 0",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:21:53.669Z"
+  },
+  "submissionId": 311,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841ae31da9d8ecc90abc9b"
+  },
+  "userId": "698418461da9d8ecc90aa4ca",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        int res=0;\n        Queue<TreeNode> qu=new LinkedList<>();\n        qu.add(root);\n        while(!qu.isEmpty()){\n            int siz=qu.size();\n            boolean vst=false;\n            int val=0;\n            for(int i=0;i<siz;i++){\n                TreeNode cur=qu.poll();\n                if(!vst){\n                    val=cur.val;\n                    vst=true;\n                }\n                if(cur.left!=null) qu.add(cur.left);\n                if(cur.right!=null) qu.add(cur.right);\n            }\n            res=val;\n        }\n        return res;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:21:55.186Z"
+  },
+  "submissionId": 312,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841af61da9d8ecc90abcb9"
+  },
+  "userId": "698418261da9d8ecc90aa3fe",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] mat) {\n        int m=mat.length,n=mat[0].length;\n        int column0=1;\n        for(int i=0;i<m;i++){\n            for(int j=0;j<n;j++){\n                if(mat[i][j]==0){\n                    mat[i][0]=0;\n                    if(j==0) column0=0;\n                    else mat[0][j]=0;\n                }\n            }\n        }\n        for(int i=1;i<m;i++){\n            for(int j=1;j<n;j++){\n                if(mat[i][0]==0 || mat[0][j]==0){\n                    mat[i][j]=0;\n                }\n            }\n        }\n        if(mat[0][0]==0){\n            for(int j=0;j<n;j++){\n                mat[0][j]=0;\n            }\n        }\n        if(column0==0){\n            for(int i=0;i<m;i++){\n                mat[i][0]=0;\n            }\n        }\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:22:14.371Z"
+  },
+  "submissionId": 313,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841afe1da9d8ecc90abcc7"
+  },
+  "userId": "698418131da9d8ecc90aa3b8",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        int val = -1;\n        Queue<TreeNode> q = new LinkedList<>();\n        q.add(root);\n        TreeNode curr;\n        int n;\n        while(!q.isEmpty()){\n            n=q.size();\n            for(int i=0;i<n;i++){\n                curr=q.poll();\n                if(i==0) val=curr.val;\n                if(curr.left!=null) q.add(curr.left);\n                if(curr.right!=null) q.add(curr.right);\n            }\n        }\n        return val;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:22:22.897Z"
+  },
+  "submissionId": 314,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841b181da9d8ecc90abcfd"
+  },
+  "userId": "6984183f1da9d8ecc90aa499",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        if (root == null) return 0;\n        int last = 0;\n        Queue<TreeNode> queue = new LinkedList<>();\n        queue.add(root);\n        while (!queue.isEmpty()) \n        {\n            int count = queue.size();\n\n            for (int i = 0; i < count; i++) \n            {\n                TreeNode current = queue.poll();\n                if (i == 0) \n                {\n                    last = current.val;\n                }\n                if (current.left != null) \n                {\n                    queue.add(current.left);\n                }\n                if (current.right != null) \n                {\n                    queue.add(current.right);\n                }\n            }\n        }\n        return last;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:22:48.033Z"
+  },
+  "submissionId": 315,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841b211da9d8ecc90abd13"
+  },
+  "userId": "698418441da9d8ecc90aa4c1",
+  "problemId": "698234bd2fd0434e56a60d4a",
+  "problemTitle": "Set Matrix Zeroes",
+  "language": "java",
+  "code": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        if(matrix.length==1 && matrix[0].length==1){\n            return ;\n        }\n        boolean z=false;\n        for(int i=0;i<matrix.length;i++){\n            if(matrix[i][0]==0){\n                z=true;\n            }\n            for(int j=1;j<matrix[0].length;j++){\n                if(matrix[i][j]==0){\n                    matrix[i][0]=0;\n                    matrix[0][j]=0;\n                }\n            }\n        }\n       \n       \n        \n        for(int i=matrix.length-1;i>=0;i--){\n            for(int j=matrix[0].length-1;j>=1;j--){\n                if(matrix[0][j]==0||matrix[i][0]==0){\n                    matrix[i][j]=0;\n                }\n            }\n        }\n        if(z==true){\n            for(int i=0;i<matrix.length;i++){\n                matrix[i][0]=0;\n            }\n        }\n\n\n\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:22:57.639Z"
+  },
+  "submissionId": 316,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841b461da9d8ecc90abd33"
+  },
+  "userId": "6984196a1da9d8ecc90aae24",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "python",
+  "code": "class Solution:\n    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:\n        queue = deque([root])\n        ans = root.val\n        while queue:\n            level_size = len(queue)\n            for i in range(level_size):\n                node = queue.popleft()\n                if i == 0:\n                    ans = node.val\n\n                if node.left:\n                    queue.append(node.left)\n                if node.right:\n                    queue.append(node.right)\n        return ans",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:23:34.386Z"
+  },
+  "submissionId": 317,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841b481da9d8ecc90abd41"
+  },
+  "userId": "6984196a1da9d8ecc90aae24",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "python",
+  "code": "class Solution:\n    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:\n        queue = deque([root])\n        ans = root.val\n        while queue:\n            level_size = len(queue)\n            for i in range(level_size):\n                node = queue.popleft()\n                if i == 0:\n                    ans = node.val\n\n                if node.left:\n                    queue.append(node.left)\n                if node.right:\n                    queue.append(node.right)\n        return ans",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:23:36.625Z"
+  },
+  "submissionId": 318,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841b4b1da9d8ecc90abd47"
+  },
+  "userId": "6984196a1da9d8ecc90aae24",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "python",
+  "code": "class Solution:\n    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:\n        queue = deque([root])\n        ans = root.val\n        while queue:\n            level_size = len(queue)\n            for i in range(level_size):\n                node = queue.popleft()\n                if i == 0:\n                    ans = node.val\n\n                if node.left:\n                    queue.append(node.left)\n                if node.right:\n                    queue.append(node.right)\n        return ans",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:23:39.638Z"
+  },
+  "submissionId": 319,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841b811da9d8ecc90abd65"
+  },
+  "userId": "698418371da9d8ecc90aa47c",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        int leftmost=root.val;\n        Queue<TreeNode>que=new LinkedList<>();\n        que.add(root);\n        while(!que.isEmpty()){\n            int qsize=que.size();\n            for(int i=0;i<qsize;i++){\n                TreeNode cur=que.poll();\n                if(i==0)leftmost=cur.val;\n                if(cur.left!=null)que.add(cur.left);\n                if(cur.right!=null)que.add(cur.right);\n            }\n        }\n        return leftmost;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:24:33.279Z"
+  },
+  "submissionId": 320,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841ba11da9d8ecc90abd93"
+  },
+  "userId": "698418821da9d8ecc90aa545",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "class Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        if (root == null) return 0;\n\n        int last = 0;\n        Queue<TreeNode> queue = new LinkedList<>();\n        queue.add(root);\n\n        while (!queue.isEmpty()) {\n            int count = queue.size();\n\n            for (int i = 0; i < count; i++) {\n                TreeNode current = queue.poll();\n                if (i == 0) {\n                    last = current.val;\n                }\n\n                if (current.left != null) {\n                    queue.add(current.left);\n                }\n\n                if (current.right != null) {\n                    queue.add(current.right);\n                }\n            }\n        }\n        return last;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:25:05.729Z"
+  },
+  "submissionId": 321,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841bb31da9d8ecc90abd99"
+  },
+  "userId": "698418421da9d8ecc90aa4ad",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "class Solution {\n    private int maxDepth;\n    private int bottomLeftValue;\n    public int findBottomLeftValue(TreeNode root) {\n        maxDepth = -1;\n        bottomLeftValue = 0;\n        dfs(root, 0);\n        return bottomLeftValue;\n    }\n    private void dfs(TreeNode current, int depth) {\n        if (current == null) {\n            return;\n        }\n        if (depth > maxDepth) {\n            maxDepth = depth;\n            bottomLeftValue = current.val;\n        }\n        dfs(current.left, depth + 1);\n        dfs(current.right, depth + 1);\n    }\n}\n",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:25:23.023Z"
+  },
+  "submissionId": 322,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841c1f1da9d8ecc90abdb9"
+  },
+  "userId": "6984181a1da9d8ecc90aa3c6",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        if(root==null)return 0;\n        int ans=root.val;\n        Queue<TreeNode> que=new LinkedList<>();\n        que.add(root);\n        while(!que.isEmpty()){\n            int size=que.size();\n            for(int i=0;i<size;i++){\n                TreeNode node=que.poll();\n                if(i==0){\n                    ans=node.val;\n                }\n                if(node.left!=null){\n                    que.add(node.left);\n                }\n                if(node.right!=null){\n                    que.add(node.right);\n                }\n            }\n        }\n        return ans;\n        \n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:27:11.609Z"
+  },
+  "submissionId": 323,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841d6c1da9d8ecc90abdef"
+  },
+  "userId": "698418281da9d8ecc90aa416",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "class Solution {\n    static int max,ans;\n    public void find(TreeNode root,int l){\n        if(root==null) return;\n        if(max<l){\n            max=l;\n            ans=root.val;\n        }\n        find(root.left,l+1);\n        find(root.right,l+1);\n    }\n    public int findBottomLeftValue(TreeNode root) {\n        ans=0;max=-1;\n        find(root,0);\n        return ans;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:32:44.742Z"
+  },
+  "submissionId": 324,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69841d741da9d8ecc90abdf5"
+  },
+  "userId": "6984183b1da9d8ecc90aa48f",
+  "problemId": "698234bd2fd0434e56a6123e",
+  "problemTitle": "Find Bottom Left Tree Value",
+  "language": "java",
+  "code": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public int findBottomLeftValue(TreeNode root) {\n        Queue<TreeNode> que = new LinkedList<>();\n        int leftMost = root.val;\n\n        if ( root != null ) que.add(root);\n\n        while ( !que.isEmpty() ){\n            int len = que.size();\n            for ( int i = 0; i < len; i += 1 ){\n                TreeNode top = que.poll();\n                if ( i == 0 ) leftMost = top.val;\n\n                if ( top.left != null ) que.add(top.left);\n                if ( top.right != null ) que.add(top.right);\n            }\n        }\n        \n        return leftMost;\n    }\n}",
+  "status": "submitted",
+  "submittedAt": {
+    "$date": "2026-02-05T04:32:52.635Z"
+  },
+  "submissionId": 325,
+  "__v": 0
+}]
